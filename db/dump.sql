@@ -1,0 +1,21 @@
+BEGIN TRANSACTION;
+DROP TABLE 'Authors';
+CREATE TABLE 'Authors' (id integer primary key, vorname text, nachname text, geburtsjahr integer, todesjahr integer);
+INSERT INTO "Authors" VALUES(1,'Patric','Mueller',1976,NULL);
+INSERT INTO "Authors" VALUES(2,'Blablub','Hlal',1900,1945);
+
+DROP TABLE 'Shortstories';
+CREATE TABLE 'Shortstories' (id integer primary key, author_id integer, titel text, jahr integer, sprache text);
+INSERT INTO "Shortstories" VALUES(1,1,'test2',2001,'deutsch');
+INSERT INTO "Shortstories" VALUES(2,1,'test2',2001,'deutsch');
+INSERT INTO "Shortstories" VALUES(3,1,'test3',2000,'deutsch');
+INSERT INTO "Shortstories" VALUES(4,1,'Bla blub',2003,'englisch');
+INSERT INTO "Shortstories" VALUES(5,1,'neuer Titel',1990,'deutsch');
+INSERT INTO "Shortstories" VALUES(6,1,'Bla',1800,'franzoesisch');
+INSERT INTO "Shortstories" VALUES(7,1,'Blamii',1988,'deutsch');
+INSERT INTO "Shortstories" VALUES(8,1,'test4',1999,'deutsch');
+INSERT INTO "Shortstories" VALUES(9,1,'test5',1999,'deutsch');
+INSERT INTO "Shortstories" VALUES(10,1,'test6',1999,'deutsch');
+INSERT INTO "Shortstories" VALUES(11,1,'test7',1999,'deutsch');
+INSERT INTO "Shortstories" VALUES(12,1,'test8',1980,'deutsch');
+COMMIT;

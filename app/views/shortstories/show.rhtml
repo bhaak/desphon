@@ -1,0 +1,8 @@
+<% for column in Shortstory.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @shortstory.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @shortstory %> |
+<%= link_to 'Back', :action => 'list' %>
