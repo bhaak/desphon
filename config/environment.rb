@@ -53,6 +53,15 @@ end
 #   inflect.uncountable %w( fish sheep )
 # end
 
+# Add pluralization for german words
+Inflector.inflections do |i|
+	i.irregular 'autor', 'autoren'
+	i.irregular 'onlinetext', 'onlinetexte'
+	i.irregular 'typ', 'typen'
+	i.irregular 'produkt', 'produkte'
+	i.irregular 'fehler', 'fehler'
+end
+
 # Add new mime types for use in respond_to blocks:
 # Mime::Type.register "text/richtext", :rtf
 # Mime::Type.register "application/x-mobile", :mobile
