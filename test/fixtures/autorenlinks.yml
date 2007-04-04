@@ -1,5 +1,40 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-one:
+unbekannt:
+  id: 0
+  url: Theodor_Herzl
+  typ: unbekannt
+
+de:
   id: 1
-two:
+  url: Theodor_Herzl
+  typ: wikipedia_de
+
+en:
   id: 2
+  url: Theodor_Herzl
+  typ: wikipedia_en
+
+fr:
+  id: 3
+  url: Theodor_Herzl
+  typ: wikipedia_fr
+
+it:
+  id: 4
+  url: Theodor_Herzl
+  typ: wikipedia_it
+
+gutenberg_org:
+  id: 5
+  url: Edward_Bellamy
+  typ: gutenberg.org
+
+gutenberg_spiegel_de:
+  id: 6
+  url: herzl.htm
+  typ: gutenberg.spiegel.de
+
+fictionfantasy_de:
+  id: 7
+  url: 3989
+  typ: fictionfantasy.de

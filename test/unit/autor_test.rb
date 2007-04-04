@@ -3,11 +3,6 @@ require File.dirname(__FILE__) + '/../test_helper'
 class AutorTest < Test::Unit::TestCase
   fixtures :autoren
 
-  # Replace this with your real tests.
-  def test_truth
-    assert true
-  end
-
   def test_zeigeNamen
     assert_equal("",
                  autoren(:null_autor).zeigeNamen)
