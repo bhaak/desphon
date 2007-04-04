@@ -50,11 +50,13 @@ create table Autoren (
 	created_at timestamptz,
 	updated_at timestamptz);
 
+-- drop table Autorenlinks;
 create table Autorenlinks (
-  autor_id integer,
+	id integer primary key,
 	url text,
 	typ text, 
   beschreibung text,
+  autor_id integer,
 	FOREIGN KEY(autor_id) REFERENCES autoren(id));
 -- Typ kann sein:
 -- homepage,
