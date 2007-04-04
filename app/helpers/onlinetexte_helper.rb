@@ -1,0 +1,2 @@
+module OnlinetexteHelper
+end

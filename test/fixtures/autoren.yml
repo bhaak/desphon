@@ -1,0 +1,44 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+null_autor:
+  id: 1
+
+autor_mit_vornamen:
+  id: 2
+  vorname: Vorname
+
+autor_mit_vornamen_und_nachnamen:
+  id: 3
+  vorname: Vorname
+  nachname: Nachname
+
+autor_mit_nachnamen:
+  id: 4
+  nachname: Nachname
+
+autor_vollstaendig_mit_geburtsjahr:
+  id: 5
+  vorname: Vorname
+  nachname: Nachname
+  geburtsjahr: 1900
+
+autor_vollstaendig_mit_todesjahr:
+  id: 6
+  vorname: Vorname
+  nachname: Nachname
+  todesjahr: 1950
+
+autor_vollstaendig_mit_geburtsjahr_und_todesjahr:
+  id: 7
+  vorname: Vorname
+  nachname: Nachname
+  geburtsjahr: 1900
+  todesjahr: 1950
+
+autor_vollstaendig_mit_geburtsjahr_und_todesjahr_ungesichert:
+  id: 8
+  vorname: Vorname
+  nachname: Nachname
+  geburtsjahr: 1900
+  todesjahr: 1950
+  geburtsjahr_gesichert: false
+  todesjahr_gesichert: false
