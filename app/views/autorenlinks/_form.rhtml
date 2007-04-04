@@ -1,0 +1,18 @@
+<%= error_messages_for 'autorenlink' %>
+
+<!--[form:autorenlink]-->
+
+<p><label for="onlinetext_autor">Autor</label><br/>
+<%=  select("post", "author_id", Autor.find(:all, :order => "nachname asc").collect {|p| [ p.zeigeNamen, p.id ] }, { :include_blank => true }) %>
+</p>
+
+<p><label for="autorenlink_url">Url</label><br/>
+<%= text_field 'autorenlink', 'url'  %></p>
+
+<p><label for="autorenlink_typ">Typ</label><br/>
+<%= text_field 'autorenlink', 'typ'  %></p>
+
+<p><label for="autorenlink_beschreibung">Beschreibung</label><br/>
+<%= text_area 'autorenlink', 'beschreibung'  %></p>
+<!--[eoform:autorenlink]-->
+

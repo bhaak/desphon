@@ -1,0 +1,28 @@
+<h1>Listing autorenlinks</h1>
+
+<table>
+  <tr>
+    <th>Typ</th>
+    <th>URL</th>
+    <th>Beschreibung</th>
+  </tr>
+  
+<% for autorenlink in @autorenlinks %>
+  <tr>
+    <td><%=h autorenlink.typ %></td>
+    <td><%=h autorenlink.full_url %></td>
+    <td><%=h autorenlink.beschreibung %></td>
+
+    <td><%= link_to 'Show', :action => 'show', :id => autorenlink %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => autorenlink %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => autorenlink }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @autorenlink_pages.current.previous } if @autorenlink_pages.current.previous %>
+<%= link_to 'Next page', { :page => @autorenlink_pages.current.next } if @autorenlink_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New autorenlink', :action => 'new' %>
