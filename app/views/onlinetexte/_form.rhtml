@@ -1,0 +1,45 @@
+<%= error_messages_for 'onlinetext' %>
+
+<!--[form:onlinetext]-->
+<p><label for="onlinetext_titel">Titel</label><br/>
+<%= text_field 'onlinetext', 'titel'  %></p>
+
+<p><label for="onlinetext_jahr">Jahr</label><br/>
+<%= text_field 'onlinetext', 'jahr'  %></p>
+
+<p><label for="onlinetext_sprache">Sprache</label><br/>
+<%= text_field 'onlinetext', 'sprache'  %></p>
+
+<p><label for="onlinetext_originalsprache">Originalsprache</label><br/>
+<%= text_field 'onlinetext', 'originalsprache'  %></p>
+
+<p><label for="onlinetext_beschreibungslink">Beschreibungslink</label><br/>
+<%= text_field 'onlinetext', 'beschreibungslink'  %></p>
+
+<p><label for="onlinetext_format">Format</label><br/>
+<%= text_field 'onlinetext', 'format'  %></p>
+
+<p><label for="onlinetext_typ">Typ</label><br/>
+<%= text_field 'onlinetext', 'typ'  %></p>
+
+<p><label for="onlinetext_autor">Autor</label><br/>
+<%=  select("post", "author_id", Autor.find(:all, :order => "nachname asc").collect {|p| [ p.zeigeNamen, p.id ] }, { :include_blank => true }) %>
+</p>
+
+<p><label for="onlinetext_empfohlener_link">Empfohlener link</label><br/>
+<select id="onlinetext_empfohlener_link" name="onlinetext[empfohlener_link]"><option value="false">False</option><option value="true">True</option></select></p>
+
+<p><label for="onlinetext_verlag">Verlag</label><br/>
+<%= text_field 'onlinetext', 'verlag'  %></p>
+
+<p><label for="onlinetext_isbn_issn">Isbn issn</label><br/>
+<%= text_field 'onlinetext', 'isbn_issn'  %></p>
+
+<p><label for="onlinetext_buchtitel">Buchtitel</label><br/>
+<%= text_field 'onlinetext', 'buchtitel'  %></p>
+
+<p><label for="onlinetext_beschreibungslink">Beschreibung</label><br/>
+<%= text_area 'onlinetext', 'beschreibung'  %></p>
+
+<!--[eoform:onlinetext]-->
+

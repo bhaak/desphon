@@ -1,0 +1,39 @@
+<%= error_messages_for 'autor' %>
+
+<!--[form:autor]-->
+<p><label for="autor_vorname">Vorname</label><br/>
+<%= text_field 'autor', 'vorname'  %></p>
+
+<p><label for="autor_nachname">Nachname</label><br/>
+<%= text_field 'autor', 'nachname'  %></p>
+
+<hr/>
+
+<p><label for="autor_geburtstag">Geburtstag</label><br/>
+<%= date_select 'autor', 'geburtstag'  %></p>
+
+<p><label for="autor_geburtsjahr">Geburtsjahr</label><br/>
+<%= text_field 'autor', 'geburtsjahr'  %></p>
+
+<p><label for="autor_geburtsjahr_gesichert">Geburtsjahr gesichert</label><br/>
+<select id="autor_geburtsjahr_gesichert" name="autor[geburtsjahr_gesichert]"><option value="false">False</option><option value="true">True</option></select></p>
+
+<p><label for="autor_geburtsort">Geburtsort</label><br/>
+<%= text_field 'autor', 'geburtsort'  %></p>
+
+<hr/>
+
+<p><label for="autor_todestag">Todestag</label><br/>
+<%= date_select 'autor', 'todestag'  %></p>
+
+<p><label for="autor_todesjahr">Todesjahr</label><br/>
+<%= text_field 'autor', 'todesjahr'  %></p>
+
+<p><label for="autor_todesjahr_gesichert">Todesjahr gesichert</label><br/>
+<select id="autor_todesjahr_gesichert" name="autor[todesjahr_gesichert]"><option value="false">False</option><option value="true">True</option></select></p>
+
+<p><label for="autor_todesort">Todesort</label><br/>
+<%= text_field 'autor', 'todesort'  %></p>
+
+<!--[eoform:autor]-->
+
