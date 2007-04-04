@@ -9310,3 +9310,377 @@ NameError (uninitialized constant AutorenlinksController::Autorenlinks):
 
 
 Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.2/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing ApplicationController#index (for 192.168.0.247 at 2007-04-04 02:12:39) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/autorenlink" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.2/lib/action_controller/routing.rb:1292:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.2/lib/action_controller/routing.rb:1282:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.2/lib/dispatcher.rb:40:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.1/lib/active_support/dependencies.rb:488:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.1/lib/active_support/dependencies.rb:488:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.1/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.1/lib/active_support/dependencies.rb:488:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.2/lib/commands/servers/mongrel.rb:60
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.1/lib/active_support/dependencies.rb:495:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.1/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.1/lib/active_support/dependencies.rb:495:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.2/lib/commands/server.rb:39
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.2/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing AutorenlinksController#index (for 192.168.0.247 at 2007-04-04 02:12:42) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"index", "controller"=>"autorenlinks"}
+  [4;36;1mSQL (0.000530)[0m   [0;1mSELECT count(*) AS count_all FROM autorenlinks [0m
+  [4;35;1mAutorenlink Load (0.000270)[0m   [0mSELECT * FROM autorenlinks LIMIT 10 OFFSET 0[0m
+Rendering layoutfalseactionlist within layouts/autorenlinks
+Rendering autorenlinks/list
+Completed in 0.12861 (7 reqs/sec) | Rendering: 0.00724 (5%) | DB: 0.00080 (0%) | 200 OK [http://loki/autorenlinks]
+
+
+Processing AutorenlinksController#new (for 192.168.0.247 at 2007-04-04 02:12:48) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"new", "controller"=>"autorenlinks"}
+Rendering  within layouts/autorenlinks
+Rendering autorenlinks/new
+Rendered autorenlinks/_form (0.00185)
+Completed in 0.01521 (65 reqs/sec) | Rendering: 0.00614 (40%) | DB: 0.00000 (0%) | 200 OK [http://loki/autorenlinks/new]
+
+
+Processing AutorenlinksController#new (for 192.168.0.247 at 2007-04-04 02:13:44) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"new", "controller"=>"autorenlinks"}
+Rendering  within layouts/autorenlinks
+Rendering autorenlinks/new
+  [4;36;1mAutor Load (0.001988)[0m   [0;1mSELECT * FROM autoren ORDER BY nachname asc[0m
+Rendered autorenlinks/_form (0.01790)
+Completed in 0.02971 (33 reqs/sec) | Rendering: 0.01918 (64%) | DB: 0.00199 (6%) | 200 OK [http://loki/autorenlinks/new]
+
+
+Processing AutorenlinksController#create (for 192.168.0.247 at 2007-04-04 02:14:07) [POST]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"commit"=>"Create", "post"=>{"author_id"=>"2"}, "action"=>"create", "autorenlink"=>{"typ"=>"wikipedia_en", "beschreibung"=>"", "url"=>"http://testetsets"}, "controller"=>"autorenlinks"}
+  [4;35;1mSQL (0.000577)[0m   [0mINSERT INTO autorenlinks ("typ", "autor_id", "beschreibung", "url") VALUES('wikipedia_en', NULL, '', 'http://testetsets')[0m
+Redirected to http://loki:3000/autorenlinks/list
+Completed in 0.07416 (13 reqs/sec) | DB: 0.00058 (0%) | 302 Found [http://loki/autorenlinks/create]
+
+
+Processing AutorenlinksController#list (for 192.168.0.247 at 2007-04-04 02:14:08) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"list", "controller"=>"autorenlinks"}
+  [4;36;1mSQL (0.000339)[0m   [0;1mSELECT count(*) AS count_all FROM autorenlinks [0m
+  [4;35;1mAutorenlink Load (0.000454)[0m   [0mSELECT * FROM autorenlinks LIMIT 10 OFFSET 0[0m
+Rendering  within layouts/autorenlinks
+Rendering autorenlinks/list
+Completed in 0.01486 (67 reqs/sec) | Rendering: 0.00418 (28%) | DB: 0.00079 (5%) | 200 OK [http://loki/autorenlinks/list]
+
+
+Processing AutorenlinksController#new (for 192.168.0.247 at 2007-04-04 02:14:20) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"new", "controller"=>"autorenlinks"}
+Rendering  within layouts/autorenlinks
+Rendering autorenlinks/new
+  [4;36;1mAutor Load (0.001528)[0m   [0;1mSELECT * FROM autoren ORDER BY nachname asc[0m
+Rendered autorenlinks/_form (0.01693)
+Completed in 0.02968 (33 reqs/sec) | Rendering: 0.01887 (63%) | DB: 0.00153 (5%) | 200 OK [http://loki/autorenlinks/new]
+
+
+Processing AutorenlinksController#create (for 192.168.0.247 at 2007-04-04 02:14:34) [POST]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"commit"=>"Create", "post"=>{"author_id"=>"2"}, "action"=>"create", "autorenlink"=>{"typ"=>"wikipedia_de", "beschreibung"=>"", "url"=>"asdasd"}, "controller"=>"autorenlinks"}
+  [4;35;1mSQL (0.000336)[0m   [0mINSERT INTO autorenlinks ("typ", "autor_id", "beschreibung", "url") VALUES('wikipedia_de', NULL, '', 'asdasd')[0m
+Redirected to http://loki:3000/autorenlinks/list
+Completed in 0.08740 (11 reqs/sec) | DB: 0.00034 (0%) | 302 Found [http://loki/autorenlinks/create]
+
+
+Processing AutorenlinksController#list (for 192.168.0.247 at 2007-04-04 02:14:34) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"list", "controller"=>"autorenlinks"}
+  [4;36;1mSQL (0.000343)[0m   [0;1mSELECT count(*) AS count_all FROM autorenlinks [0m
+  [4;35;1mAutorenlink Load (0.000510)[0m   [0mSELECT * FROM autorenlinks LIMIT 10 OFFSET 0[0m
+Rendering  within layouts/autorenlinks
+Rendering autorenlinks/list
+Completed in 0.01493 (66 reqs/sec) | Rendering: 0.00404 (27%) | DB: 0.00085 (5%) | 200 OK [http://loki/autorenlinks/list]
+
+
+Processing AutorenController#list (for 192.168.0.247 at 2007-04-04 02:15:30) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"list", "controller"=>"autoren"}
+  [4;36;1mSQL (0.000366)[0m   [0;1mSELECT count(*) AS count_all FROM autoren [0m
+  [4;35;1mAutor Load (0.001265)[0m   [0mSELECT * FROM autoren LIMIT 10 OFFSET 0[0m
+Rendering  within layouts/autoren
+Rendering autoren/list
+Completed in 0.03131 (31 reqs/sec) | Rendering: 0.01483 (47%) | DB: 0.00163 (5%) | 200 OK [http://loki/autoren/list]
+
+
+Processing AutorenController#show (for 192.168.0.247 at 2007-04-04 02:15:38) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"autoren"}
+  [4;36;1mAutor Load (0.000797)[0m   [0;1mSELECT * FROM autoren WHERE (autoren.id = 1) [0m
+Rendering  within layouts/autoren
+Rendering autoren/show
+Completed in 0.02107 (47 reqs/sec) | Rendering: 0.00658 (31%) | DB: 0.00080 (3%) | 200 OK [http://loki/autoren/show/1]
+
+
+Processing AutorenController#show (for 192.168.0.247 at 2007-04-04 02:16:15) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"autoren"}
+  [4;35;1mAutor Load (0.000787)[0m   [0mSELECT * FROM autoren WHERE (autoren.id = 1) [0m
+Rendering  within layouts/autoren
+Rendering autoren/show
+Completed in 0.01965 (50 reqs/sec) | Rendering: 0.00666 (33%) | DB: 0.00079 (4%) | 200 OK [http://loki/autoren/show/1]
+
+
+Processing AutorenController#show (for 192.168.0.247 at 2007-04-04 02:16:27) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"autoren"}
+  [4;36;1mAutor Load (0.000896)[0m   [0;1mSELECT * FROM autoren WHERE (autoren.id = 1) [0m
+Rendering  within layouts/autoren
+Rendering autoren/show
+Completed in 0.01972 (50 reqs/sec) | Rendering: 0.00645 (32%) | DB: 0.00090 (4%) | 200 OK [http://loki/autoren/show/1]
+
+
+Processing AutorenlinksController#list (for 192.168.0.247 at 2007-04-04 02:28:09) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"list", "controller"=>"autorenlinks"}
+  [4;35;1mSQL (0.000358)[0m   [0mSELECT count(*) AS count_all FROM autorenlinks [0m
+  [4;36;1mAutorenlink Load (0.000573)[0m   [0;1mSELECT * FROM autorenlinks LIMIT 10 OFFSET 0[0m
+Rendering  within layouts/autorenlinks
+Rendering autorenlinks/list
+Completed in 0.01858 (53 reqs/sec) | Rendering: 0.00708 (38%) | DB: 0.00093 (5%) | 200 OK [http://loki/autorenlinks/list]
+
+
+Processing AutorenlinksController#edit (for 192.168.0.247 at 2007-04-04 02:28:25) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"edit", "controller"=>"autorenlinks"}
+
+
+ActiveRecord::RecordNotFound (Couldn't find Autorenlink without an ID):
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.2/lib/active_record/base.rb:1012:in `find_from_ids'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.2/lib/active_record/base.rb:419:in `find'
+    .//app/controllers/autorenlinks_controller.rb:34:in `edit'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.2/lib/action_controller/base.rb:1095:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.2/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.2/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.2/lib/action_controller/filters.rb:634:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.2/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.2/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.2/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.2/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.2/lib/action_controller/base.rb:430:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.2/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.2/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.2/lib/action_controller/session_management.rb:114:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.2/lib/action_controller/base.rb:330:in `process'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.2/lib/dispatcher.rb:41:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.1/lib/active_support/dependencies.rb:488:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.1/lib/active_support/dependencies.rb:488:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.1/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.1/lib/active_support/dependencies.rb:488:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.2/lib/commands/servers/mongrel.rb:60
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.1/lib/active_support/dependencies.rb:495:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.1/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.1/lib/active_support/dependencies.rb:495:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.2/lib/commands/server.rb:39
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.2/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing AutorenlinksController#list (for 192.168.0.247 at 2007-04-04 02:30:27) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"list", "controller"=>"autorenlinks"}
+  [4;35;1mSQL (0.000317)[0m   [0mSELECT count(*) AS count_all FROM autorenlinks [0m
+  [4;36;1mAutorenlink Load (0.000514)[0m   [0;1mSELECT * FROM autorenlinks LIMIT 10 OFFSET 0[0m
+Rendering  within layouts/autorenlinks
+Rendering autorenlinks/list
+Completed in 0.01613 (61 reqs/sec) | Rendering: 0.00564 (34%) | DB: 0.00083 (5%) | 200 OK [http://loki/autorenlinks/list]
+
+
+Processing AutorenlinksController#list (for 192.168.0.247 at 2007-04-04 02:30:47) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"list", "controller"=>"autorenlinks"}
+  [4;35;1mSQL (0.000348)[0m   [0mSELECT count(*) AS count_all FROM autorenlinks [0m
+  [4;36;1mAutorenlink Load (0.000514)[0m   [0;1mSELECT * FROM autorenlinks LIMIT 10 OFFSET 0[0m
+Rendering  within layouts/autorenlinks
+Rendering autorenlinks/list
+Completed in 0.01630 (61 reqs/sec) | Rendering: 0.00668 (40%) | DB: 0.00086 (5%) | 200 OK [http://loki/autorenlinks/list]
+
+
+Processing AutorenlinksController#list (for 192.168.0.247 at 2007-04-04 02:31:53) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"list", "controller"=>"autorenlinks"}
+  [4;35;1mSQL (0.000374)[0m   [0mSELECT count(*) AS count_all FROM autorenlinks [0m
+  [4;36;1mAutorenlink Load (0.000318)[0m   [0;1mSELECT * FROM autorenlinks LIMIT 10 OFFSET 0[0m
+Rendering  within layouts/autorenlinks
+Rendering autorenlinks/list
+Completed in 0.01589 (62 reqs/sec) | Rendering: 0.00464 (29%) | DB: 0.00069 (4%) | 200 OK [http://loki/autorenlinks/list]
+
+
+Processing AutorenlinksController#new (for 192.168.0.247 at 2007-04-04 02:31:56) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"new", "controller"=>"autorenlinks"}
+Rendering  within layouts/autorenlinks
+Rendering autorenlinks/new
+  [4;35;1mAutor Load (0.001520)[0m   [0mSELECT * FROM autoren ORDER BY nachname asc[0m
+Rendered autorenlinks/_form (0.01592)
+Completed in 0.02871 (34 reqs/sec) | Rendering: 0.01792 (62%) | DB: 0.00152 (5%) | 200 OK [http://loki/autorenlinks/new]
+
+
+Processing AutorenlinksController#create (for 192.168.0.247 at 2007-04-04 02:32:15) [POST]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"commit"=>"Create", "post"=>{"author_id"=>"1"}, "action"=>"create", "autorenlink"=>{"typ"=>"wikipedia_de", "beschreibung"=>"", "url"=>"Theodor_Herzl"}, "controller"=>"autorenlinks"}
+  [4;36;1mSQL (0.000356)[0m   [0;1mINSERT INTO autorenlinks ("typ", "autor_id", "beschreibung", "url") VALUES('wikipedia_de', NULL, '', 'Theodor_Herzl')[0m
+Redirected to http://loki:3000/autorenlinks/list
+Completed in 0.07450 (13 reqs/sec) | DB: 0.00036 (0%) | 302 Found [http://loki/autorenlinks/create]
+
+
+Processing AutorenlinksController#list (for 192.168.0.247 at 2007-04-04 02:32:16) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"list", "controller"=>"autorenlinks"}
+  [4;35;1mSQL (0.000308)[0m   [0mSELECT count(*) AS count_all FROM autorenlinks [0m
+  [4;36;1mAutorenlink Load (0.000413)[0m   [0;1mSELECT * FROM autorenlinks LIMIT 10 OFFSET 0[0m
+Rendering  within layouts/autorenlinks
+Rendering autorenlinks/list
+Completed in 0.01292 (77 reqs/sec) | Rendering: 0.00351 (27%) | DB: 0.00072 (5%) | 200 OK [http://loki/autorenlinks/list]
+
+
+Processing AutorenlinksController#new (for 192.168.0.247 at 2007-04-04 02:32:19) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"new", "controller"=>"autorenlinks"}
+Rendering  within layouts/autorenlinks
+Rendering autorenlinks/new
+  [4;35;1mAutor Load (0.001656)[0m   [0mSELECT * FROM autoren ORDER BY nachname asc[0m
+Rendered autorenlinks/_form (0.01768)
+Completed in 0.03169 (31 reqs/sec) | Rendering: 0.01953 (61%) | DB: 0.00166 (5%) | 200 OK [http://loki/autorenlinks/new]
+
+
+Processing AutorenlinksController#create (for 192.168.0.247 at 2007-04-04 02:32:35) [POST]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"commit"=>"Create", "post"=>{"author_id"=>"1"}, "action"=>"create", "autorenlink"=>{"typ"=>"wikipedia_en", "beschreibung"=>"", "url"=>"Theodor_Herzl"}, "controller"=>"autorenlinks"}
+  [4;36;1mSQL (0.000362)[0m   [0;1mINSERT INTO autorenlinks ("typ", "autor_id", "beschreibung", "url") VALUES('wikipedia_en', NULL, '', 'Theodor_Herzl')[0m
+Redirected to http://loki:3000/autorenlinks/list
+Completed in 0.06493 (15 reqs/sec) | DB: 0.00036 (0%) | 302 Found [http://loki/autorenlinks/create]
+
+
+Processing AutorenlinksController#list (for 192.168.0.247 at 2007-04-04 02:32:35) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"list", "controller"=>"autorenlinks"}
+  [4;35;1mSQL (0.000317)[0m   [0mSELECT count(*) AS count_all FROM autorenlinks [0m
+  [4;36;1mAutorenlink Load (0.000564)[0m   [0;1mSELECT * FROM autorenlinks LIMIT 10 OFFSET 0[0m
+Rendering  within layouts/autorenlinks
+Rendering autorenlinks/list
+Completed in 0.01392 (71 reqs/sec) | Rendering: 0.00425 (30%) | DB: 0.00088 (6%) | 200 OK [http://loki/autorenlinks/list]
+
+
+Processing AutorenlinksController#show (for 192.168.0.247 at 2007-04-04 02:32:48) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"autorenlinks"}
+  [4;35;1mAutorenlink Load (0.000461)[0m   [0mSELECT * FROM autorenlinks WHERE (autorenlinks.id = 1) [0m
+Rendering  within layouts/autorenlinks
+Rendering autorenlinks/show
+Completed in 0.01331 (75 reqs/sec) | Rendering: 0.00401 (30%) | DB: 0.00046 (3%) | 200 OK [http://loki/autorenlinks/show/1]
+
+
+Processing AutorenlinksController#list (for 192.168.0.247 at 2007-04-04 02:33:58) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"list", "controller"=>"autorenlinks"}
+  [4;36;1mSQL (0.000385)[0m   [0;1mSELECT count(*) AS count_all FROM autorenlinks [0m
+  [4;35;1mAutorenlink Load (0.001024)[0m   [0mSELECT * FROM autorenlinks LIMIT 10 OFFSET 0[0m
+Rendering  within layouts/autorenlinks
+Rendering autorenlinks/list
+Completed in 0.02075 (48 reqs/sec) | Rendering: 0.00867 (41%) | DB: 0.00141 (6%) | 200 OK [http://loki/autorenlinks/list]
+
+
+Processing AutorenlinksController#list (for 192.168.0.247 at 2007-04-04 02:34:18) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"list", "controller"=>"autorenlinks"}
+  [4;36;1mSQL (0.000335)[0m   [0;1mSELECT count(*) AS count_all FROM autorenlinks [0m
+  [4;35;1mAutorenlink Load (0.000800)[0m   [0mSELECT * FROM autorenlinks LIMIT 10 OFFSET 0[0m
+Rendering  within layouts/autorenlinks
+Rendering autorenlinks/list
+Completed in 0.01568 (63 reqs/sec) | Rendering: 0.00517 (32%) | DB: 0.00114 (7%) | 200 OK [http://loki/autorenlinks/list]
+
+
+Processing AutorenlinksController#new (for 192.168.0.247 at 2007-04-04 03:46:10) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"new", "controller"=>"autorenlinks"}
+Rendering  within layouts/autorenlinks
+Rendering autorenlinks/new
+  [4;36;1mAutor Load (0.001523)[0m   [0;1mSELECT * FROM autoren ORDER BY nachname asc[0m
+Rendered autorenlinks/_form (0.01604)
+Completed in 0.02835 (35 reqs/sec) | Rendering: 0.01805 (63%) | DB: 0.00152 (5%) | 200 OK [http://loki/autorenlinks/new]
+
+
+Processing AutorenlinksController#create (for 192.168.0.247 at 2007-04-04 03:46:29) [POST]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"commit"=>"Create", "post"=>{"author_id"=>"3"}, "action"=>"create", "autorenlink"=>{"typ"=>"fictionfantasy.de", "beschreibung"=>"", "url"=>"3839"}, "controller"=>"autorenlinks"}
+  [4;35;1mSQL (0.000346)[0m   [0mINSERT INTO autorenlinks ("typ", "autor_id", "beschreibung", "url") VALUES('fictionfantasy.de', NULL, '', '3839')[0m
+Redirected to http://loki:3000/autorenlinks/list
+Completed in 0.08718 (11 reqs/sec) | DB: 0.00035 (0%) | 302 Found [http://loki/autorenlinks/create]
+
+
+Processing AutorenlinksController#list (for 192.168.0.247 at 2007-04-04 03:46:30) [GET]
+  Session ID: 3705cc53278bf025c0ad5cf095823860
+  Parameters: {"action"=>"list", "controller"=>"autorenlinks"}
+  [4;36;1mSQL (0.000469)[0m   [0;1mSELECT count(*) AS count_all FROM autorenlinks [0m
+  [4;35;1mAutorenlink Load (0.000774)[0m   [0mSELECT * FROM autorenlinks LIMIT 10 OFFSET 0[0m
+Rendering  within layouts/autorenlinks
+Rendering autorenlinks/list
+Completed in 0.01767 (56 reqs/sec) | Rendering: 0.00512 (28%) | DB: 0.00124 (7%) | 200 OK [http://loki/autorenlinks/list]
