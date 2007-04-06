@@ -1,8 +1,0 @@
-<% for column in Autorenlink.content_columns %>
-<p>
-  <b><%= column.human_name %>:</b> <%=h @autorenlink.send(column.name) %>
-</p>
-<% end %>
-
-<%= link_to 'Edit', :action => 'edit', :id => @autorenlink %> |
-<%= link_to 'Back', :action => 'list' %>
