@@ -16,7 +16,24 @@ class Autorenlink < ActiveRecord::Base
     else
 			return url
 		end
+		# TODO
     # dsfdb.org, isfdb.org
+	  # perrypedia, perry-rhodan.net link
+		# http://www.nemesisarchiv.de.vu/
 	end
+
+  def options
+    [
+      ["Homepage", "homepage"],
+      ["Wikipedia DE", "wikipedia_de"],
+      ["Wikipedia EN", "wikipedia_en"],
+      ["Wikipedia FR", "wikipedia_fr"],
+      ["Wikipedia IT", "wikipedia_it"],
+      ["Gutenberg", "gutenberg.org"],
+      ["Gutenberg DE", "gutenberg.spiegel.de"],
+      ["FictionFantasy DE", "fictionfantasy.de"],
+      ["Sonstiger Link", "sonstiges"],
+    ]
+  end
 
 end

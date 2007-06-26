@@ -8,16 +8,19 @@ class AutorenlinksController < ApplicationController
   verify :method => :post, :only => [ :destroy, :create, :update ],
          :redirect_to => { :action => :list }
 
-  def list
-    @autorenlink_pages, @autorenlinks = paginate :autorenlinks, :per_page => 10
-  end
+  #def list
+    # @autorenlink_pages, @autorenlinks = paginate :autorenlinks, :per_page => 10
+  #end
 
-  def show
-    @autorenlink = Autorenlink.find(params[:id])
-  end
+  #def show
+    # @autorenlink = Autorenlink.find(params[:id])
+  #end
 
   def new
     @autorenlink = Autorenlink.new
+		if params[:autor] != nil then
+			@autorenlink.autor_id = params[:autor]
+		end
   end
 
   def create
@@ -38,7 +41,8 @@ class AutorenlinksController < ApplicationController
     @autorenlink = Autorenlink.find(params[:id])
     if @autorenlink.update_attributes(params[:autorenlink])
       flash[:notice] = 'Autorenlink was successfully updated.'
-      redirect_to :action => 'show', :id => @autorenlink
+      #redirect_to :action => 'show', :id => @autorenlink
+      redirect_to :action => 'show', :controller => "autoren", :id => @autorenlink.autor_id
     else
       render :action => 'edit'
     end

@@ -21,4 +21,7 @@
 <p>
 <%= Autor.find(onlinetext.autor_id).zeigeNamen unless onlinetext.autor_id == nil -%>
 </p>
+<p>
+<%= link_to onlinetext.titel, { :action => "show", :id => onlinetext.id, :controller => "onlinetexte" } -%>
+</p>
 </div>
