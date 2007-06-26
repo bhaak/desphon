@@ -2,28 +2,33 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define() do
-
-  create_table "Authors", :force => true do |t|
-    t.column "vorname",     :text
-    t.column "nachname",    :text
-    t.column "geburtsjahr", :integer
-    t.column "todesjahr",   :integer
-  end
+ActiveRecord::Schema.define(:version => 4) do
 
   create_table "Autoren", :force => true do |t|
     t.column "vorname",               :text
     t.column "nachname",              :text
-    t.column "geburtsjahr",           :date
-    t.column "todesjahr",             :date
-    t.column "geburtsjahr_gesichert", :boolean
-    t.column "todesjahr_gesichert",   :boolean
+    t.column "geburtsjahr",           :integer
+    t.column "todesjahr",             :integer
+    t.column "geburtsjahr_gesichert", :boolean,   :default => true
+    t.column "todesjahr_gesichert",   :boolean,   :default => true
     t.column "geburtstag",            :date
     t.column "todestag",              :date
     t.column "geburtsort",            :text
     t.column "todesort",              :text
-    t.column "created_at",            :datetime
-    t.column "updated_at",            :datetime
+    t.column "created_at",            :timestamp
+    t.column "updated_at",            :timestamp
+  end
+
+  create_table "Autoren_Onlinetexte", :id => false, :force => true do |t|
+    t.column "autor_id",      :integer
+    t.column "onlinetext_id", :integer
+  end
+
+  create_table "Autorenlinks", :force => true do |t|
+    t.column "url",          :text
+    t.column "typ",          :text
+    t.column "beschreibung", :text
+    t.column "autor_id",     :integer
   end
 
   create_table "Onlinetexte", :force => true do |t|
@@ -40,15 +45,8 @@ ActiveRecord::Schema.define() do
     t.column "empfohlener_link",  :boolean
     t.column "beschreibung",      :text
     t.column "autor_id",          :integer
-    t.column "created_at",        :datetime
-    t.column "updated_at",        :datetime
-  end
-
-  create_table "Shortstories", :force => true do |t|
-    t.column "author_id", :integer
-    t.column "titel",     :text
-    t.column "jahr",      :integer
-    t.column "sprache",   :text
+    t.column "created_at",        :timestamp
+    t.column "updated_at",        :timestamp
   end
 
 end

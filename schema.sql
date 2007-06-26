@@ -34,6 +34,12 @@ create table Onlinetexte (
 --insert into onlinetexte (id, titel, jahr, sprache, originalsprache) values (2, 'test2', 2001, 'deutsch', 'deutsch');
 --insert into onlinetexte (id, titel, jahr, sprache, originalsprache) values (3, 'test3', 2000, 'deutsch', 'deutsch');
 
+-- drop table Autoren_Onlinetexte;
+create table Autoren_Onlinetexte (
+	autor_id integer,
+	onlinetext_id integer);
+
+
 -- drop table Autoren;
 create table Autoren (
 	id integer primary key,
