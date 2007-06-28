@@ -2,17 +2,19 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 4) do
+ActiveRecord::Schema.define(:version => 5) do
 
   create_table "Autoren", :force => true do |t|
     t.column "vorname",               :text
     t.column "nachname",              :text
     t.column "geburtsjahr",           :integer
+    t.column "geburtsmonat",          :integer
+    t.column "geburtstag",            :integer
     t.column "todesjahr",             :integer
+    t.column "todesmonat",            :integer
+    t.column "todestag",              :integer
     t.column "geburtsjahr_gesichert", :boolean,   :default => true
     t.column "todesjahr_gesichert",   :boolean,   :default => true
-    t.column "geburtstag",            :date
-    t.column "todestag",              :date
     t.column "geburtsort",            :text
     t.column "todesort",              :text
     t.column "created_at",            :timestamp
@@ -29,6 +31,8 @@ ActiveRecord::Schema.define(:version => 4) do
     t.column "typ",          :text
     t.column "beschreibung", :text
     t.column "autor_id",     :integer
+    t.column "created_at",   :timestamp
+    t.column "updated_at",   :timestamp
   end
 
   create_table "Onlinetexte", :force => true do |t|
@@ -47,6 +51,15 @@ ActiveRecord::Schema.define(:version => 4) do
     t.column "autor_id",          :integer
     t.column "created_at",        :timestamp
     t.column "updated_at",        :timestamp
+  end
+
+  create_table "Onlinetextelinks", :force => true do |t|
+    t.column "onlinetext_id",  :integer
+    t.column "url",            :text
+    t.column "uebersichtsurl", :text
+    t.column "mime_typ",       :text
+    t.column "created_at",     :timestamp
+    t.column "updated_at",     :timestamp
   end
 
 end

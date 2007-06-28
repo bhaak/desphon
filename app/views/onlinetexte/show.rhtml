@@ -1,5 +1,3 @@
-A
-
 <%= error_messages_for 'onlinetext' %>
 
 <p style="color: green"><%= flash[:notice] %></p> 
@@ -12,6 +10,32 @@ A
 </p>
 <% end %>
 
-<%= link_to 'Edit', :action => 'edit', :id => @onlinetext %> |
-<%= link_to 'Autor hinzufügen', :action => 'add_author', :id => @onlinetext %> |
-<%= link_to 'Back', :action => 'list' %>
+
+
+<h3>Links</h3>
+<table>
+  <tr>
+    <th>URL</th>
+    <th>Uebersichtslink</th>
+    <th>mime_typ</th>
+  </tr>
+
+<% for url in @onlinetext.onlinetextelinks %>
+  <tr>
+    <td><%=h url.url %></td>
+    <td><%=h url.uebersichtsurl %></td>
+    <td><%=h url.mime_typ %></td>
+
+		<td><%= link_to 'Ändern', :controller => 'onlinetextelinks', :action => 'edit', :id => url %></td>
+    <td><%= link_to 'Destroy', { :controller => 'onlinetextelinks', :action => 'destroy', :id => url }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Neue URL', :controller => 'onlinetextelinks', :action => 'new', :onlinetext => @onlinetext %>
+
+
+<p>
+<%= link_to 'Ändern', :action => 'edit', :id => @onlinetext %> |
+<%= link_to 'Zurück', :action => 'list' %>
+</p>

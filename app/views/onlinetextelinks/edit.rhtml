@@ -1,0 +1,9 @@
+<h1>Editing onlinetextelink</h1>
+
+<% form_tag :action => 'update', :id => @onlinetextelink do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Edit' %>
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @onlinetextelink %> |
+<%= link_to 'Back', :action => 'list' %>

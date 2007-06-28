@@ -1,0 +1,20 @@
+<%= error_messages_for 'onlinetextelink' %>
+
+<!--[form:onlinetextelink]-->
+
+<% @onlinetext_id = params[:onlinetext] || @onlinetextelink.onlinetext_id %>
+<p><label for="onlinetextelink_onlinetext_id">Onlinetext:</label> <%=h Onlinetext.find(@onlinetext_id) %> </p>
+
+<%= hidden_field 'onlinetextelink', 'onlinetext_id' %>
+
+<p><label for="onlinetextelink_url">Url</label><br/>
+<%= text_field 'onlinetextelink', 'url'  %></p>
+
+<p><label for="onlinetextelink_uebersichtsurl">Uebersichtsurl</label><br/>
+<%= text_field 'onlinetextelink', 'uebersichtsurl'  %></p>
+
+<p><label for="onlinetextelink_mime_typ">Mime typ</label><br/>
+<%= text_field 'onlinetextelink', 'mime_typ'  %></p>
+
+<!--[eoform:onlinetextelink]-->
+
