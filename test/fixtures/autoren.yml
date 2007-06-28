@@ -42,3 +42,16 @@ autor_vollstaendig_mit_geburtsjahr_und_todesjahr_ungesichert:
   todesjahr: 1950
   geburtsjahr_gesichert: false
   todesjahr_gesichert: false
+
+autor_vollstaendig_mit_datum:
+  id: 9
+  vorname: Vorname
+  nachname: Nachname
+  geburtsjahr: 1900
+  geburtsmonat: 11
+  geburtstag: 27
+  todesjahr: 1950
+  todesmonat: 1
+  todestag: 20
+  geburtsjahr_gesichert: true
+  todesjahr_gesichert: true

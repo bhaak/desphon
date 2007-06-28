@@ -1,3 +1,11 @@
+A
+
+<%= error_messages_for 'onlinetext' %>
+
+<p style="color: green"><%= flash[:notice] %></p> 
+<p style="color: orange"><%= flash[:warning] %></p> 
+<p style="color: red"><%= flash[:error] %></p> 
+
 <% for column in Onlinetext.content_columns %>
 <p>
   <b><%= column.human_name %>:</b> <%=h @onlinetext.send(column.name) %>
@@ -5,4 +13,5 @@
 <% end %>
 
 <%= link_to 'Edit', :action => 'edit', :id => @onlinetext %> |
+<%= link_to 'Autor hinzufügen', :action => 'add_author', :id => @onlinetext %> |
 <%= link_to 'Back', :action => 'list' %>

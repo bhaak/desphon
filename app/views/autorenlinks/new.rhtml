@@ -1,8 +1,8 @@
-<h1>New autorenlink</h1>
+<h1>Autorenlink erstellen</h1>
 
 <% form_tag :action => 'create' do %>
   <%= render :partial => 'form' %>
   <%= submit_tag "Create" %>
 <% end %>
 
-<%= link_to 'Zurueck', :controller => 'autoren', :action => 'show', :id => @autorenlink.autor_id -%>
+<%= link_to 'Zurück', :controller => 'autoren', :action => 'show', :id => @autorenlink.autor_id -%>

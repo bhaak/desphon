@@ -1,8 +1,8 @@
-<h1>Editing autorenlink</h1>
+<h1>Autorenlink ändern</h1>
 
 <% form_tag :action => 'update', :id => @autorenlink do %>
   <%= render :partial => 'form' %>
   <%= submit_tag 'Edit' %>
 <% end %>
 
-<%= link_to 'Zurueck', :controller => 'autoren', :action => 'show', :id => @autorenlink.autor_id -%>
+<%= link_to 'Zurück', :controller => 'autoren', :action => 'show', :id => @autorenlink.autor_id -%>

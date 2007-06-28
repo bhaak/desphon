@@ -5,7 +5,7 @@ class OnlinetexteController < ApplicationController
   end
 
   # GETs should be safe (see http://www.w3.org/2001/tag/doc/whenToUseGet.html)
-  verify :method => :post, :only => [ :destroy, :create, :update ],
+  verify :method => :post, :only => [ :destroy, :create, :update, :update_authors ],
          :redirect_to => { :action => :list }
 
   def list
@@ -47,5 +47,23 @@ class OnlinetexteController < ApplicationController
   def destroy
     Onlinetext.find(params[:id]).destroy
     redirect_to :action => 'list'
+  end
+
+  def add_author
+    @onlinetext = Onlinetext.find(params[:id])
+  end
+
+  def update_authors
+    @onlinetext = Onlinetext.find(params[:id])
+    puts params[:selektierte_autoren]
+    @onlinetext.autoren = []
+    for autor in params[:selektierte_autoren] do
+      @onlinetext.autoren << Autor.find(autor)
+    end
+    flash[:notice] = 'Autoren wurden aktualisiert.'
+    flash[:warning] = 'Warnung.'
+    flash[:error] = 'Autoren.'
+    flash[:alert] = 'Autoren.'
+    redirect_to :action => 'show', :id => params[:id]
   end
 end

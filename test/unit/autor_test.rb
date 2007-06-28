@@ -23,4 +23,28 @@ class AutorTest < Test::Unit::TestCase
                  autoren(:autor_vollstaendig_mit_geburtsjahr_und_todesjahr_ungesichert).zeigeNamen)
   end
 
+  def test_Datum
+    assert_equal("",
+                 autoren(:null_autor).zeigeGeburtsdatum)
+    assert_equal("",
+                 autoren(:autor_mit_vornamen).zeigeGeburtsdatum)
+    assert_equal("1900",
+                 autoren(:autor_vollstaendig_mit_geburtsjahr).zeigeGeburtsdatum)
+    assert_equal("27. November 1900",
+                 autoren(:autor_vollstaendig_mit_datum).zeigeGeburtsdatum)
+    assert_equal("1900?",
+                 autoren(:autor_vollstaendig_mit_geburtsjahr_und_todesjahr_ungesichert).zeigeGeburtsdatum)
+
+    assert_equal("",
+                 autoren(:null_autor).zeigeTodesdatum)
+    assert_equal("",
+                 autoren(:autor_mit_vornamen).zeigeTodesdatum)
+    assert_equal("1950",
+                 autoren(:autor_vollstaendig_mit_todesjahr).zeigeTodesdatum)
+    assert_equal("20. Januar 1950",
+                 autoren(:autor_vollstaendig_mit_datum).zeigeTodesdatum)
+    assert_equal("1950?",
+                 autoren(:autor_vollstaendig_mit_geburtsjahr_und_todesjahr_ungesichert).zeigeTodesdatum)
+  end
+
 end

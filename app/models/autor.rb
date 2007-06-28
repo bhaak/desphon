@@ -1,5 +1,9 @@
 class Autor < ActiveRecord::Base
-	has_many  :onlinetexte
+	has_and_belongs_to_many  :onlinetexte
+	has_many  :autorenlinks
+
+  MONATSNAMEN = [nil, "Januar", "Februar", "März", "April", "Mai", "Juni",
+    "Juli", "August", "September", "Oktober", "November", "Dezember"]
 
   def zeigeNamen
     str = ""
@@ -39,4 +43,24 @@ class Autor < ActiveRecord::Base
     end
   end
 
+  def zeigeTodesdatum
+    return zeigeDatum(todesjahr, todesmonat, todestag, todesjahr_gesichert)
+  end
+
+  def zeigeGeburtsdatum
+    return zeigeDatum(geburtsjahr, geburtsmonat, geburtstag, geburtsjahr_gesichert)
+  end
+
+  def zeigeDatum(jahr, monat=nil, tag=nil, gesichert=true)
+    if jahr == nil then return "" end
+    datum = jahr.to_s
+    datum += "?" if !gesichert
+    if monat != nil then
+      datum = MONATSNAMEN[monat]+" "+datum
+    end
+    if tag != nil then
+      datum = tag.to_s+". "+datum
+    end
+    return datum
+  end
 end

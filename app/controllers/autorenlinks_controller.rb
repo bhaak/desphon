@@ -27,7 +27,7 @@ class AutorenlinksController < ApplicationController
     @autorenlink = Autorenlink.new(params[:autorenlink])
     if @autorenlink.save
       flash[:notice] = 'Autorenlink was successfully created.'
-      redirect_to :action => 'list'
+      redirect_zum_autor
     else
       render :action => 'new'
     end
@@ -41,15 +41,19 @@ class AutorenlinksController < ApplicationController
     @autorenlink = Autorenlink.find(params[:id])
     if @autorenlink.update_attributes(params[:autorenlink])
       flash[:notice] = 'Autorenlink was successfully updated.'
-      #redirect_to :action => 'show', :id => @autorenlink
-      redirect_to :action => 'show', :controller => "autoren", :id => @autorenlink.autor_id
+      redirect_zum_autor
     else
       render :action => 'edit'
     end
   end
 
   def destroy
-    Autorenlink.find(params[:id]).destroy
-    redirect_to :action => 'list'
+    @autorenlink = Autorenlink.find(params[:id])
+    @autorenlink.destroy
+    redirect_zum_autor
+  end
+
+  def redirect_zum_autor
+    redirect_to :action => 'show', :controller => "autoren", :id => @autorenlink.autor_id
   end
 end

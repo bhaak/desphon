@@ -2,7 +2,7 @@
 
 <!--[form:autorenlink]-->
 
-<%=h @autorenlink.autor_id %> <br/>
+<!--<%=h @autorenlink.autor_id %> <br/>-->
 
 <% @autor_id = params[:autor] || @autorenlink.autor_id %>
 <p><label for="onlinetext_autor">Autor:</label> <%=h Autor.find(@autor_id).zeigeNamen %> </p>
@@ -15,7 +15,7 @@
 
 <p><label for="autorenlink_typ">Typ</label><br/>
 <%= select("autorenlink", "typ", @autorenlink.options) %>
-<%= text_field 'autorenlink', 'typ'  %></p>
+<!--<%= text_field 'autorenlink', 'typ'  %></p>-->
 
 <p><label for="autorenlink_beschreibung">Beschreibung</label><br/>
 <%= text_area 'autorenlink', 'beschreibung'  %></p>

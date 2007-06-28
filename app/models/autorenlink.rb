@@ -1,4 +1,5 @@
 class Autorenlink < ActiveRecord::Base
+	belongs_to :autor
 	
   # liefert einen vollstaengien HTTP-Url abhaengig vom Typ des Links zurueck
 	def full_url
