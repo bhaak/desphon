@@ -1,27 +1,37 @@
-<h1>Listing onlinetexte</h1>
+<% alphabet = @onlinetexte.collect {|onlinetext| onlinetext.titel.chars[0..0] } -%>
+<div class='toc'>
+<% for buchstabe in 'A'..'Z' -%>
+<% if alphabet.include?(buchstabe) then -%>
+ <a href="#<%= buchstabe%>"><%= buchstabe -%></a>
+<% else -%>
+ <span><%= buchstabe %></span>
+<% end -%>
+<% end -%>
+</div>
 
-<table>
-  <tr>
-  <% for column in Onlinetext.content_columns %>
-    <th><%= column.human_name %></th>
-  <% end %>
-  </tr>
-  
+<hr />
+
+<% initiale = '' -%>
 <% for onlinetext in @onlinetexte %>
-  <tr>
-  <% for column in Onlinetext.content_columns %>
-    <td><%=h onlinetext.send(column.name) %></td>
-  <% end %>
-    <td><%= link_to 'Show', :action => 'show', :id => onlinetext %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => onlinetext %></td>
-    <td><%= link_to 'Destroy', { :action => 'destroy', :id => onlinetext }, :confirm => 'Are you sure?', :method => :post %></td>
-  </tr>
-<% end %>
-</table>
+  <% neu_initiale = onlinetext.titel.chars[0..0] %>
+  <% if neu_initiale != initiale then -%>
+    <% initiale = neu_initiale -%>
+    <h3 id="<%= h initiale -%>"><%= h initiale -%></h3>
+  <% end -%>
+  <%= link_to h(onlinetext.titel), :action => 'show', :id => onlinetext %>
+   <%= '('+h(onlinetext.jahr)+')' if not onlinetext.jahr.blank? %>
+  <%= ' von '+onlinetext.autoren.collect { |autor|
+      link_to(autor.kurzname, :controller => 'autoren', :action => 'show', :id => autor) }.join(', ') if onlinetext.autoren.size > 0
+   -%>
 
-<%= link_to 'Previous page', { :page => @onlinetext_pages.current.previous } if @onlinetext_pages.current.previous %>
-<%= link_to 'Next page', { :page => @onlinetext_pages.current.next } if @onlinetext_pages.current.next %> 
+  <br />
+<% end %>
+
+<%= link_to 'Vorherige Seite', { :page => @onlinetext_pages.current.previous } if @onlinetext_pages.current.previous %>
+<%= link_to 'Nächste Seite', { :page => @onlinetext_pages.current.next } if @onlinetext_pages.current.next %> 
 
 <br />
+<hr />
+<br />
 
-<%= link_to 'New onlinetext', :action => 'new' %>
+<%= link_to 'Neuer Text', :action => 'new' %>

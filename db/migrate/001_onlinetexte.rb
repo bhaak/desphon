@@ -18,11 +18,8 @@ class Onlinetexte < ActiveRecord::Migration
 									" sprache text,\n"+ 
 									" originalsprache text,\n"+ 
 									" beschreibungslink text,\n"+ 
-									" format text,\n"+ 
-									" typ text,\n"+ 
 									" empfohlener_link boolean,\n"+ 
 									" beschreibung text,\n"+ 
-									" autor_id integer,\n"+ 
 									" created_at timestamptz,\n"+ 
 									" updated_at timestamptz,\n"+ 
 									" FOREIGN KEY(autor_id) REFERENCES autoren(id))" 

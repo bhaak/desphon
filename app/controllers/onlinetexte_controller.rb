@@ -9,7 +9,7 @@ class OnlinetexteController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-    @onlinetext_pages, @onlinetexte = paginate :onlinetexte, :per_page => 10
+    @onlinetext_pages, @onlinetexte = paginate :onlinetexte, :per_page => 10, :order => 'titel'
   end
 
   def show
