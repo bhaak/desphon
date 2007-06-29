@@ -5,6 +5,10 @@ class Autor < ActiveRecord::Base
   MONATSNAMEN = [nil, "Januar", "Februar", "März", "April", "Mai", "Juni",
     "Juli", "August", "September", "Oktober", "November", "Dezember"]
 
+  def kurzname
+    return vorname + " " + nachname
+  end
+  
   def zeigeNamen
     str = ""
 

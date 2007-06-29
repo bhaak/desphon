@@ -1,17 +1,24 @@
 <%= error_messages_for 'onlinetext' %>
 
-<p style="color: green"><%= flash[:notice] %></p> 
-<p style="color: orange"><%= flash[:warning] %></p> 
-<p style="color: red"><%= flash[:error] %></p> 
-
-<% for column in Onlinetext.content_columns %>
-<p>
-  <b><%= column.human_name %>:</b> <%=h @onlinetext.send(column.name) %>
+<h1><%=h @onlinetext.titel %></h1>
+<% anzahl_autoren = @onlinetext.autoren.size -%>
+<% if anzahl_autoren > 0 -%>
+<p><b><%= anzahl_autoren > 1 ? "Autoren:" : "Autor:" -%></b>
+<%= @onlinetext.autoren.collect { |autor| 
+		 link_to(autor.kurzname, :controller => 'autoren', :action => 'show', :id => autor) }.join(', ')
+ -%><br/>
+<% end -%>
+<%='<b>Veröffentlicht:</b> '+h(@onlinetext.jahr)+'<br/>' if not @onlinetext.jahr.blank? %>
+<%='<b>Buch:</b> '+h(@onlinetext.buchtitel)+'<br/>' if not @onlinetext.buchtitel.blank? %>
+<%='<b>ISBN/ISSN:</b> '+h(@onlinetext.isbn_issn)+'<br/>' if not @onlinetext.isbn_issn.blank? %>
+<%='<b>Verlag:</b> '+h(@onlinetext.verlag)+'<br/>' if not @onlinetext.verlag.blank? %>
+<%='<b>Originalsprache:</b> '+h(@onlinetext.originalsprache)+'<br/>' if not @onlinetext.originalsprache.blank? %>
+<%='<span class="beschreibung"><b>Beschreibung:</b> '+h(@onlinetext.beschreibung)+'</span>' if not @onlinetext.beschreibung.blank? %>
+<%= link_to 'Ändern', :action => 'edit', :id => @onlinetext %> |
+<%= link_to 'Autoren editieren', :action => 'add_author', :id => @onlinetext %>
 </p>
-<% end %>
 
-
-
+<hr/>
 <h3>Links</h3>
 <table>
   <tr>
@@ -22,20 +29,18 @@
 
 <% for url in @onlinetext.onlinetextelinks %>
   <tr>
-    <td><%=h url.url %></td>
+    <td><a href="<%= url.url -%>"><%=h url.zeige_url -%></a></td>
     <td><%=h url.uebersichtsurl %></td>
     <td><%=h url.mime_typ %></td>
 
 		<td><%= link_to 'Ändern', :controller => 'onlinetextelinks', :action => 'edit', :id => url %></td>
-    <td><%= link_to 'Destroy', { :controller => 'onlinetextelinks', :action => 'destroy', :id => url }, :confirm => 'Are you sure?', :method => :post %></td>
+    <td><%= link_to 'Löschen', { :controller => 'onlinetextelinks', :action => 'destroy', :id => url }, :confirm => 'Are you sure?', :method => :post %></td>
   </tr>
 <% end %>
 </table>
 
 <%= link_to 'Neue URL', :controller => 'onlinetextelinks', :action => 'new', :onlinetext => @onlinetext %>
 
+<hr/>
 
-<p>
-<%= link_to 'Ändern', :action => 'edit', :id => @onlinetext %> |
 <%= link_to 'Zurück', :action => 'list' %>
-</p>

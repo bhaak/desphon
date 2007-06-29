@@ -24,18 +24,10 @@
 <p><label for="onlinetext_originalsprache">Originalsprache</label><br/>
 <%= text_field 'onlinetext', 'originalsprache'  %></p>
 
-<%= select :onlinetext, :empfohlener_link, {"Empfohlener Link" => true, "Kein empfohlener Link" => false} -%>
+<%= select :onlinetext, :empfohlener_link, {"Empfohlener Text" => true, "Kein empfohlener Text" => false} -%>
 
-<p><label for="onlinetext_beschreibungslink">Beschreibungslink</label><br/>
-<%= text_field 'onlinetext', 'beschreibungslink'  %></p>
-
-<p><label for="onlinetext_format">Format</label><br/>
-<%= text_field 'onlinetext', 'format'  %></p>
-
-<p><label for="onlinetext_typ">Typ</label><br/>
-<%= text_field 'onlinetext', 'typ'  %></p>
-
-<%= text_field 'onlinetext', 'beschreibung'  %></p>
+<p><label for="onlinetext_beschreibung">Beschreibung</label><br/>
+<%= text_area 'onlinetext', 'beschreibung'  %></p>
 
 <!--[eoform:onlinetext]-->
 

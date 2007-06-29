@@ -9,7 +9,7 @@
 
 <% form_tag :action => 'update_authors', :id => @onlinetext do %>
 	 <%= multi_select_collection("selektierte_autoren", @autoren,
-   		 [Autor.find(:first)], "id", "zeigeNamen", size=5) %>
+   		 @onlinetext.autoren, "id", "zeigeNamen", size=5) %>
   <br/>
   <%= submit_tag 'Edit' %>
 <% end %>

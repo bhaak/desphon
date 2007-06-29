@@ -72,3 +72,9 @@ div.progressBar div.background {
   width: 0%;
 }
 
+
+span.beschreibung { 
+  text-indent: -2em;
+  padding-left: 2em;
+  display: block;
+}
