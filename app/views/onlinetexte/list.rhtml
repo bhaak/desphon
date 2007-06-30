@@ -1,13 +1,5 @@
 <% alphabet = @onlinetexte.collect {|onlinetext| onlinetext.titel.chars[0..0] } -%>
-<div class='toc'>
-<% for buchstabe in 'A'..'Z' -%>
-<% if alphabet.include?(buchstabe) then -%>
- <a href="#<%= buchstabe%>"><%= buchstabe -%></a>
-<% else -%>
- <span><%= buchstabe %></span>
-<% end -%>
-<% end -%>
-</div>
+<%= toc alphabet %>
 
 <hr />
 

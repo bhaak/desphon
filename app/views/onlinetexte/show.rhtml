@@ -15,6 +15,7 @@
 <%='<b>Originalsprache:</b> '+h(@onlinetext.originalsprache)+'<br/>' if not @onlinetext.originalsprache.blank? %>
 <%='<span class="beschreibung"><b>Beschreibung:</b> '+h(@onlinetext.beschreibung)+'</span>' if not @onlinetext.beschreibung.blank? %>
 <%= link_to 'Ändern', :action => 'edit', :id => @onlinetext %> |
+<%= link_to 'Löschen', :action => 'destroy', :id => @onlinetext %> |
 <%= link_to 'Autoren editieren', :action => 'add_author', :id => @onlinetext %>
 </p>
 

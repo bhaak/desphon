@@ -18,4 +18,20 @@ module ApplicationHelper
     result << "</select>\n"
     return result
   end
+
+
+  # liefert ein Inhaltsverzeichnis zurueck, bei dem nur die in "alphabet" vorhanden Zeichen verlinkt sind
+  def toc(alphabet)
+    result = "<div class='toc'>"
+    for buchstabe in 'A'..'Z'
+      if alphabet.include?(buchstabe) then
+        result << "<a href='#{buchstabe}'>#{buchstabe}</a> "
+      else
+        result << "<span>#{buchstabe}</span> "
+      end
+    end
+    result << '</div>'
+    return result
+  end
+
 end
