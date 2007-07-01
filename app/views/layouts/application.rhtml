@@ -3,18 +3,19 @@
 <html>
   <head>
     <title><%= @title || "My default title" %></title>
-    <%= stylesheet_link_tag 'global' %>
-    <%= javascript_include_tag 'custom', 'prototype', 'effects' %>
+    %= stylesheet_link_tag 'global' %>
+    %= javascript_include_tag 'custom', 'prototype', 'effects' %>
+		<%= auto_discovery_link_tag(:rss, :action => 'rss') %>
   </head>
   <body>
     <div id="header">
-      <%= render :partial => 'shared/header' %>
+      %= render :partial => 'shared/header' %>
     </div>
     <div id="content">
       <%= yield %>
     </div>
     <div id="footer">
-      <%= render :partial => 'shared/footer' %>
+      %= render :partial => 'shared/footer' %>
     </div>
   </body>
 </html>
