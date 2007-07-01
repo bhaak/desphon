@@ -7,42 +7,13 @@
 <li><b>Gestorben: </b><%= @autor.zeigeTodesdatum %><%= " in " + @autor.todesort if @autor.todesort != "" %></li>
 </ul>
 
-<!--
-<% for column in Autor.content_columns %>
-<p>
-  <b><%= column.name %>:</b> <%=h @autor.send(column.name) %>
-</p>
-<% end %>
-
 <%= link_to 'Ändern', :action => 'edit', :id => @autor %> |
-<%= link_to 'Back', :action => 'list' %>
--->
-
-<% onlinetexte = Onlinetext.find(:all, :conditions => ["autor_id = ?", @autor.id]) -%>
-<% if onlinetexte.size > 0 -%>
-<h3>Texte</h3>
-<table>
-  <tr>
-    <th>Titel</th>
-    <th>Jahr</th>
-  </tr>
-
-<% for onlinetext in onlinetexte %>
-  <tr>
-    <td><%=h onlinetext.titel %></td>
-    <td><%=h onlinetext.jahr %></td>
-
-    <td><%= link_to 'Show', :controller => 'onlinetexte', :action => 'show', :id => onlinetext %></td>
-    <td><%= link_to 'Ändern', :controller => 'onlinetexte', :action => 'edit', :id => onlinetext %></td>
-    <td><%= link_to 'Destroy', { :controller => 'onlinetexte', :action => 'destroy', :id => onlinetext }, :confirm => 'Are you sure?', :method => :post %></td>
-  </tr>
-<% end %>
-</table>
-<% end %>
+<%= link_to 'Löschen', :action => 'destroy', :id => @autor %>
 
 
 <% autorenlinks = Autorenlink.find(:all, :conditions => ["autor_id = ?", @autor.id]) -%>
 <% if autorenlinks.size > 0 -%>
+<hr />
 <h3>Weblinks</h3>
 <table>
   <tr>
@@ -58,9 +29,21 @@
     <td><%=h autorenlink.beschreibung %></td>
 
     <td><%= link_to 'Ändern', :controller => 'autorenlinks', :action => 'edit', :id => autorenlink %></td>
-    <td><%= link_to 'Destroy', { :controller => 'autorenlinks', :action => 'destroy', :id => autorenlink }, :confirm => 'Are you sure?', :method => :post %></td>
+    <td><%= link_to 'Löschen', { :controller => 'autorenlinks', :action => 'destroy', :id => autorenlink }, :confirm => 'Are you sure?', :method => :post %></td>
   </tr>
 <% end %>
 </table>
 <% end %>
 <%= link_to 'Neuer Autorenlink', :controller => 'autorenlinks', :action => 'new', :autor => @autor %>
+
+<% onlinetexte = @autor.onlinetexte -%>
+<% if onlinetexte.size > 0 -%>
+  <hr />
+  <h3>Texte</h3>
+  <% for onlinetext in onlinetexte -%>
+    <%= link_to h(onlinetext.titel), :controller => 'onlinetexte', :action => 'show', :id => onlinetext -%>
+    <%= '('+h(onlinetext.jahr)+')' if not onlinetext.jahr.blank? -%><br/>
+  <% end %>
+<% end %>
+
+<hr />
