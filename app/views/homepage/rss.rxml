@@ -1,0 +1,21 @@
+xml.instruct! :xml, :version=>"1.0"
+xml.rss(:version=>"2.0") do
+  xml.channel do
+    xml.title("desphon")
+		xml.link(request.protocol + request.host_with_port + url_for(:rss => nil))
+    xml.description("Neue Texte bei desphon")
+    xml.language("de")
+    for text in @texte
+      xml.item do
+        von = ' von '+text.onlinetext.autoren.collect { |autor| autor.kurzname }.join(', ') 
+        xml.title(text.onlinetext.titel+von)
+        xml.description(text.mime_typ)
+        xml.pubDate(text.created_at.rfc2822)
+        xml.link(request.protocol + request.host_with_port +
+					url_for(:controller => "onlinetexte", :action => "show", :id => text.onlinetext.id.to_s, :anchor => "rss")) 
+        xml.guid("onlinetextelinks_"+text.id.to_s, :isPermaLink => false)
+        
+      end
+    end
+  end
+end
