@@ -14,6 +14,13 @@ class AutorenController < ApplicationController
 
   def show
     @autor = Autor.find(params[:id])
+    minTime = Time.rfc2822(request.env["HTTP_IF_MODIFIED_SINCE"]) rescue nil
+    if minTime and @autor.updated_at <= minTime 
+      render :nothing => true, :status => 304
+    else
+      response.headers['Last-Modified'] = @autor.updated_at.httpdate
+    end
+
   end
 
   def new

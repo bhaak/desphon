@@ -9,11 +9,17 @@ class OnlinetexteController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-    @onlinetext_pages, @onlinetexte = paginate :onlinetexte, :per_page => 10, :order => 'titel'
+    @onlinetext_pages, @onlinetexte = paginate :onlinetexte, :per_page => 10, :order => 'titel', :include => :autoren
   end
 
   def show
     @onlinetext = Onlinetext.find(params[:id])
+    minTime = Time.rfc2822(request.env["HTTP_IF_MODIFIED_SINCE"]) rescue nil
+    if minTime and @onlinetext.updated_at <= minTime 
+      render :nothing => true, :status => 304
+    else
+      response.headers['Last-Modified'] = @onlinetext.updated_at.httpdate
+    end
   end
 
   def new
@@ -24,7 +30,7 @@ class OnlinetexteController < ApplicationController
     @onlinetext = Onlinetext.new(params[:onlinetext])
     if @onlinetext.save
       flash[:notice] = 'Onlinetext was successfully created.'
-      redirect_to :action => 'list'
+      redirect_to :action => 'show', :id => @onlinetext.id
     else
       render :action => 'new'
     end
