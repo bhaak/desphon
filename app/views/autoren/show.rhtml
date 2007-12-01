@@ -3,8 +3,12 @@
 <!--<p><%= @autor.zeigeNamen %> </p>-->
 
 <ul>
+<% if not @autor.zeigeGeburtsdatum.blank? then -%>
 <li><b>Geboren: </b><%= @autor.zeigeGeburtsdatum %><%= " in " + @autor.geburtsort if @autor.geburtsort != "" %></li>
+<% end -%>
+<% if not @autor.zeigeTodesdatum.blank? then -%>
 <li><b>Gestorben: </b><%= @autor.zeigeTodesdatum %><%= " in " + @autor.todesort if @autor.todesort != "" %></li>
+<% end -%>
 </ul>
 
 <% if @autorisiert then -%>
@@ -13,8 +17,8 @@
 <% end -%>
 
 <% autorenlinks = Autorenlink.find(:all, :conditions => ["autor_id = ?", @autor.id]) -%>
-<% if autorenlinks.size > 0 -%>
 <hr />
+<% if autorenlinks.size > 0 -%>
 <h3>Weblinks</h3>
 <table>
   <tr>
