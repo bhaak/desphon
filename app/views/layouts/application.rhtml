@@ -2,20 +2,22 @@
 				"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
   <head>
-    <title><%= @title || "My default title" %></title>
-    %= stylesheet_link_tag 'global' %>
-    %= javascript_include_tag 'custom', 'prototype', 'effects' %>
+    <title><%= @title.blank? ? "desphon: Deutschsprachige Phantastik online" : "desphon: "+@title %></title>
+		<%= stylesheet_link_tag 'scaffold' %>
 		<%= auto_discovery_link_tag(:rss, :action => 'rss') %>
   </head>
   <body>
-    <div id="header">
-      %= render :partial => 'shared/header' %>
+    <div id="kopfzeile">
+      <%= render :partial => 'homepage/header' -%>
     </div>
-    <div id="content">
+    <div id="inhalt">
+			<p style="color: green"><%= flash[:notice] %></p>
+			<p style="color: orange"><%= flash[:warning] %></p> 
+			<p style="color: red"><%= flash[:error] %></p> 
       <%= yield %>
     </div>
-    <div id="footer">
-      %= render :partial => 'shared/footer' %>
+    <div id="fusszeile">
+      %= render :partial => 'homepage/footer' %>
     </div>
   </body>
 </html>

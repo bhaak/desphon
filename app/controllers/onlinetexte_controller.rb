@@ -1,4 +1,6 @@
 class OnlinetexteController < ApplicationController
+  layout 'application'
+
   def index
     list
     render :action => 'list'
