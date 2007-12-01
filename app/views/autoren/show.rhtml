@@ -7,9 +7,10 @@
 <li><b>Gestorben: </b><%= @autor.zeigeTodesdatum %><%= " in " + @autor.todesort if @autor.todesort != "" %></li>
 </ul>
 
+<% if @autorisiert then -%>
 <%= link_to 'Ändern', :action => 'edit', :id => @autor %> |
 <%= link_to 'Löschen', :action => 'destroy', :id => @autor %>
-
+<% end -%>
 
 <% autorenlinks = Autorenlink.find(:all, :conditions => ["autor_id = ?", @autor.id]) -%>
 <% if autorenlinks.size > 0 -%>
@@ -28,13 +29,15 @@
     <td><%=h autorenlink.full_url %></td>
     <td><%=h autorenlink.beschreibung %></td>
 
+  <% if @autorisiert then -%>
     <td><%= link_to 'Ändern', :controller => 'autorenlinks', :action => 'edit', :id => autorenlink %></td>
     <td><%= link_to 'Löschen', { :controller => 'autorenlinks', :action => 'destroy', :id => autorenlink }, :confirm => 'Are you sure?', :method => :post %></td>
+  <% end -%>
   </tr>
 <% end %>
 </table>
 <% end %>
-<%= link_to 'Neuer Autorenlink', :controller => 'autorenlinks', :action => 'new', :autor => @autor %>
+<%= link_to 'Neuer Autorenlink', :controller => 'autorenlinks', :action => 'new', :autor => @autor if @autorisiert -%>
 
 <% onlinetexte = @autor.onlinetexte -%>
 <% if onlinetexte.size > 0 -%>

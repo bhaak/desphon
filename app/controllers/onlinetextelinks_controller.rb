@@ -4,6 +4,8 @@ class OnlinetextelinksController < ApplicationController
   verify :method => :post, :only => [ :destroy, :create, :update ],
          :redirect_to => { :action => :list }
 
+  before_filter :redirect_to_homepage
+
   def new
     @onlinetextelink = Onlinetextelink.new
     if params[:onlinetext] != nil then

@@ -8,15 +8,18 @@
 		 link_to(autor.kurzname, :controller => 'autoren', :action => 'show', :id => autor) }.join(', ')
  -%><br/>
 <% end -%>
-<%='<b>Veröffentlicht:</b> '+h(@onlinetext.jahr)+'<br/>' if not @onlinetext.jahr.blank? %>
-<%='<b>Buch:</b> '+h(@onlinetext.buchtitel)+'<br/>' if not @onlinetext.buchtitel.blank? %>
-<%='<b>ISBN/ISSN:</b> '+h(@onlinetext.isbn_issn)+'<br/>' if not @onlinetext.isbn_issn.blank? %>
-<%='<b>Verlag:</b> '+h(@onlinetext.verlag)+'<br/>' if not @onlinetext.verlag.blank? %>
-<%='<b>Originalsprache:</b> '+h(@onlinetext.originalsprache)+'<br/>' if not @onlinetext.originalsprache.blank? %>
+<%='<b>Veröffentlicht:</b> '+h(@onlinetext.jahr)+'<br/>' if not @onlinetext.jahr.blank? -%>
+<%='<b>Buch:</b> '+h(@onlinetext.buchtitel)+'<br/>' if not @onlinetext.buchtitel.blank? -%>
+<%='<b>ISBN/ISSN:</b> '+h(@onlinetext.isbn_issn)+'<br/>' if not @onlinetext.isbn_issn.blank? -%>
+<%='<b>Verlag:</b> '+h(@onlinetext.verlag)+'<br/>' if not @onlinetext.verlag.blank? -%>
+<%='<b>Originalsprache:</b> '+h(@onlinetext.originalsprache)+'<br/>' if not @onlinetext.originalsprache.blank? -%>
 <%='<span class="beschreibung"><b>Beschreibung:</b> '+h(@onlinetext.beschreibung)+'</span>' if not @onlinetext.beschreibung.blank? %>
+
+<% if @autorisiert then -%>
 <%= link_to 'Ändern', :action => 'edit', :id => @onlinetext %> |
 <%= link_to 'Löschen', :action => 'destroy', :id => @onlinetext %> |
 <%= link_to 'Autoren editieren', :action => 'add_author', :id => @onlinetext %>
+<% end -%>
 </p>
 
 <hr/>
@@ -34,14 +37,15 @@
     <td><%=h url.uebersichtsurl %></td>
     <td><%=h url.mime_typ %></td>
 
+<% if @autorisiert then -%>
 		<td><%= link_to 'Ändern', :controller => 'onlinetextelinks', :action => 'edit', :id => url %></td>
-    <td><%= link_to 'Löschen', { :controller => 'onlinetextelinks', :action => 'destroy', :id => url }, :confirm => 'Are you sure?', :method => :post %></td>
+    <td><%= link_to 'Löschen', { :controller => 'onlinetextelinks', :action => 'destroy', :id => url },
+            :confirm => 'Are you sure?', :method => :post %></td>
+<% end -%>
   </tr>
 <% end %>
 </table>
 
-<%= link_to 'Neue URL', :controller => 'onlinetextelinks', :action => 'new', :onlinetext => @onlinetext %>
+<%= link_to 'Neue URL', :controller => 'onlinetextelinks', :action => 'new', :onlinetext => @onlinetext if @autorisiert -%>
 
 <hr/>
-
-<%= link_to 'Zurück', :action => 'list' %>

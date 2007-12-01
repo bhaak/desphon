@@ -8,6 +8,8 @@ class OnlinetexteController < ApplicationController
   verify :method => :post, :only => [ :destroy, :create, :update, :update_authors ],
          :redirect_to => { :action => :list }
 
+  before_filter :redirect_to_homepage, :except => [:list, :show]
+
   def list
     @onlinetext_pages, @onlinetexte = paginate :onlinetexte, :per_page => 10, :order => 'titel', :include => :autoren
   end

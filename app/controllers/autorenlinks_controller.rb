@@ -8,13 +8,7 @@ class AutorenlinksController < ApplicationController
   verify :method => :post, :only => [ :destroy, :create, :update ],
          :redirect_to => { :action => :list }
 
-  #def list
-    # @autorenlink_pages, @autorenlinks = paginate :autorenlinks, :per_page => 10
-  #end
-
-  #def show
-    # @autorenlink = Autorenlink.find(params[:id])
-  #end
+  before_filter :redirect_to_homepage
 
   def new
     @autorenlink = Autorenlink.new
