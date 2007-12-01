@@ -6,20 +6,30 @@ class Autor < ActiveRecord::Base
     "Juli", "August", "September", "Oktober", "November", "Dezember"]
 
   def kurzname
-    return vorname + " " + nachname
-  end
-  
-  def zeigeNamen
-    str = ""
+    str = vorname.blank? ? "" : vorname
 
-    if vorname != nil then str = vorname end
-
-    if str != "" && nachname != nil then
-      str = nachname + ", " + str
-    elsif nachname != nil then
-      str = nachname
+    if not nachname.blank? then
+      if not str.blank? then
+        str += " "+nachname
+      else
+        str = nachname
+      end
     end
-    
+
+    return str
+  end
+
+  def zeigeNamen
+    str = vorname.blank? ? "" : vorname
+
+    if not nachname.blank? then
+      if not str.blank? then
+        str = nachname + ", " + str
+      else
+        str = nachname
+      end
+    end
+
     if (geburtsjahr != nil) && (todesjahr != nil) then
       str += " ("+zeigeGeburtsjahr+"-"+zeigeTodesjahr+")"
     elsif (geburtsjahr != nil) then

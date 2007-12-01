@@ -3,7 +3,31 @@ require File.dirname(__FILE__) + '/../test_helper'
 class AutorTest < Test::Unit::TestCase
   fixtures :autoren
 
+  def test_kurzname
+    assert_equal("",
+                 Autor.find(autoren(:null_autor).id).kurzname)
+    assert_equal("",
+                 autoren(:null_autor).kurzname)
+    assert_equal("Vorname",
+                 autoren(:autor_mit_vornamen).kurzname)
+    assert_equal("Vorname Nachname",
+                 autoren(:autor_mit_vornamen_und_nachnamen).kurzname)
+    assert_equal("Nachname",
+                 autoren(:autor_mit_nachnamen).kurzname)
+
+    assert_equal("Vorname Nachname",
+                 autoren(:autor_vollstaendig_mit_geburtsjahr).kurzname)
+    assert_equal("Vorname Nachname",
+                 autoren(:autor_vollstaendig_mit_todesjahr).kurzname)
+    assert_equal("Vorname Nachname",
+                 autoren(:autor_vollstaendig_mit_geburtsjahr_und_todesjahr).kurzname)
+    assert_equal("Vorname Nachname",
+                 autoren(:autor_vollstaendig_mit_geburtsjahr_und_todesjahr_ungesichert).kurzname)
+  end
+
   def test_zeigeNamen
+    assert_equal("",
+                 Autor.find(autoren(:null_autor).id).zeigeNamen)
     assert_equal("",
                  autoren(:null_autor).zeigeNamen)
     assert_equal("Vorname",
