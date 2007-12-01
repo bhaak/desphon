@@ -11,16 +11,16 @@ ActionController::Routing::Routes.draw do |map|
 
   # You can have the root of your site routed by hooking up '' 
   # -- just remember to delete public/index.html.
-   map.connect '', :controller => "homepage"
+  map.connect '/desphon', :controller => "homepage"
 
   # Allow downloading Web Service WSDL as a file with an extension
   # instead of a file named 'wsdl'
-  map.connect ':controller/service.wsdl', :action => 'wsdl'
+  map.connect '/desphon/:controller/service.wsdl', :action => 'wsdl'
 
   # Install the default route as the lowest priority.
-  map.connect ':controller/:action/:id.:format'
-  map.connect ':controller/:action/:id'
+  map.connect '/desphon/:controller/:action/:id.:format'
+  map.connect '/desphon/:controller/:action/:id'
 
 	# RSS
-	map.connect '/rss.xml', :controller => 'homepage', :action => 'rss'
+	map.connect '/desphon/rss.xml', :controller => 'homepage', :action => 'rss'
 end
