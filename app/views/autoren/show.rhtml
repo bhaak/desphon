@@ -1,6 +1,5 @@
+<% @title = @autor.zeigeNamen -%>
 <h1><%= @autor.vorname %> <%= @autor.nachname %></h1>
-
-<!--<p><%= @autor.zeigeNamen %> </p>-->
 
 <ul>
 <% if not @autor.zeigeGeburtsdatum.blank? then -%>
@@ -10,6 +9,8 @@
 <li><b>Gestorben: </b><%= @autor.zeigeTodesdatum %><%= " in " + @autor.todesort if @autor.todesort != "" %></li>
 <% end -%>
 </ul>
+
+<%= mail_to "bhaak@gmx.net", "E-Mail-Kommentar", :subject => "[desphon] "+@autor.zeigeNamen %>
 
 <% if @autorisiert then -%>
 <%= link_to 'Ändern', :action => 'edit', :id => @autor %> |
