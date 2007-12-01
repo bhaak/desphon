@@ -54,12 +54,16 @@ ActiveRecord::Schema.define(:version => 5) do
   end
 
   create_table "Onlinetextelinks", :force => true do |t|
-    t.column "onlinetext_id",  :integer
-    t.column "url",            :text
-    t.column "uebersichtsurl", :text
-    t.column "mime_typ",       :text
-    t.column "created_at",     :timestamp
-    t.column "updated_at",     :timestamp
+    t.column "onlinetext_id",               :integer
+    t.column "url",                         :text
+    t.column "uebersichtsurl",              :text
+    t.column "mime_typ",                    :text
+    t.column "created_at",                  :timestamp
+    t.column "updated_at",                  :timestamp
+    t.column "url_beschreibung",            :text
+    t.column "uebersichtsurl_beschreibung", :text
   end
+
+  add_index "Onlinetextelinks", ["onlinetext_id", "id", "url", "uebersichtsurl", "mime_typ", "created_at", "updated_at"], :name => "onlinetextelinks_idx"
 
 end
