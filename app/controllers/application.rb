@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
 
   def autorisiert?
     @autorisiert = (ENV['REMOTEHOST'] == 'loki.local' && request.remote_ip == '192.168.0.246')
+    # @autorisiert = true
     true
   end
 
@@ -20,6 +21,10 @@ class ApplicationController < ActionController::Base
       redirect_to :controller => "homepage"
     end
     #redirect_to :action => 'show', :controller => "onlinetexte", :id => @onlinetextelink.onlinetext_id
+  end
+  
+  def in_production?
+    return ENV['RAILS_ENV'] == 'production'
   end
   
 end

@@ -21,7 +21,7 @@ class AutorenController < ApplicationController
     @autor = Autor.find(params[:id])
     minTime = Time.rfc2822(request.env["HTTP_IF_MODIFIED_SINCE"]) rescue nil
     if minTime and @autor.updated_at <= minTime 
-      render :nothing => true, :status => 304
+      render :nothing => true, :status => 304 if in_production?
     else
       response.headers['Last-Modified'] = @autor.updated_at.httpdate
     end
