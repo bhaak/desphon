@@ -1,6 +1,7 @@
 require File.dirname(__FILE__) + '/../test_helper'
 
 class AutorenlinkTest < Test::Unit::TestCase
+  fixtures :autoren
   fixtures :autorenlinks
 
   def test_links
@@ -21,4 +22,13 @@ class AutorenlinkTest < Test::Unit::TestCase
     assert_equal("http://www.fictionfantasy.de/load.php?name=News&file=article&sid=3989",
                  autorenlinks(:fictionfantasy_de).full_url)
   end
+  
+  def test_zeige_url
+    assert_equal("http://de.wikipedia.org/wiki/Theodor_Herzl",
+                 autorenlinks(:de).zeige_url)
+    assert_equal("Xenophantes' Homepage",
+                 autorenlinks(:xenophantes_homepage).zeige_url)
+    assert_equal("Eine Beschreibung",
+                 autorenlinks(:herzl_mit_beschreibung).zeige_url)
+  end 
 end

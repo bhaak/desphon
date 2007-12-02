@@ -38,3 +38,15 @@ fictionfantasy_de:
   id: 7
   url: 3989
   typ: fictionfantasy.de
+
+herzl_mit_beschreibung:
+  id: 8
+  beschreibung: Eine Beschreibung
+  url: Theodor_Herzl
+  typ: wikipedia_de
+
+xenophantes_homepage:
+  id: 9
+  autor_id: 10
+  url: Xenophantes
+  typ: homepage

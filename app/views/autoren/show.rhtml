@@ -22,17 +22,18 @@
 <% if autorenlinks.size > 0 -%>
 <h3>Weblinks</h3>
 <table>
-  <tr>
+  <!--<tr>
     <th>Typ</th>
     <th>URL</th>
     <th>Beschreibung</th>
-  </tr>
+  </tr>-->
 
 <% for autorenlink in autorenlinks %>
   <tr>
-    <td><%=h autorenlink.typ %></td>
+    <!--<td><%=h autorenlink.typ %></td>
     <td><%=h autorenlink.full_url %></td>
-    <td><%=h autorenlink.beschreibung %></td>
+    <td><%=h autorenlink.beschreibung %></td>-->
+    <td><a href="<%= autorenlink.full_url -%>"><%=h autorenlink.zeige_url -%></a></td>
 
   <% if @autorisiert then -%>
     <td><%= link_to 'Ändern', :controller => 'autorenlinks', :action => 'edit', :id => autorenlink %></td>

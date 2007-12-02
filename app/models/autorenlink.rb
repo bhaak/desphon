@@ -23,6 +23,18 @@ class Autorenlink < ActiveRecord::Base
 		# http://www.nemesisarchiv.de.vu/
 	end
 
+  def zeige_url
+    if not beschreibung.blank? then
+      return beschreibung
+    else
+      case typ
+      when "homepage"
+        return Autor.find(autor_id).genitiv+" Homepage"
+      end
+    end
+    return full_url
+  end
+
   def options
     [
       ["Homepage", "homepage"],
