@@ -55,3 +55,7 @@ autor_vollstaendig_mit_datum:
   todestag: 20
   geburtsjahr_gesichert: true
   todesjahr_gesichert: true
+
+autor_xenophantes:
+  id: 10
+  vorname: Xenophantes

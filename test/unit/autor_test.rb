@@ -3,6 +3,21 @@ require File.dirname(__FILE__) + '/../test_helper'
 class AutorTest < Test::Unit::TestCase
   fixtures :autoren
 
+  def test_genitiv
+    assert_equal("",
+                 Autor.find(autoren(:null_autor).id).genitiv)
+    assert_equal("",
+                 autoren(:null_autor).genitiv)
+    assert_equal("Vornames",
+                 autoren(:autor_mit_vornamen).genitiv)
+    assert_equal("Vorname Nachnames",
+                 autoren(:autor_mit_vornamen_und_nachnamen).genitiv)
+    assert_equal("Nachnames",
+                 autoren(:autor_mit_nachnamen).genitiv)
+    assert_equal("Xenophantes'",
+                 autoren(:autor_xenophantes).genitiv)
+  end
+  
   def test_kurzname
     assert_equal("",
                  Autor.find(autoren(:null_autor).id).kurzname)

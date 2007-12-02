@@ -19,6 +19,18 @@ class Autor < ActiveRecord::Base
     return str
   end
 
+  def genitiv
+    str = kurzname
+
+    if str == "" then return "" end
+
+    if ['s','x'].include?(kurzname[-1..-1]) then
+      return str+"'"
+    else
+      return str+"s"
+    end
+  end
+
   def zeigeNamen
     str = vorname.blank? ? "" : vorname
 
