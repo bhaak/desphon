@@ -17,7 +17,7 @@ class AutorTest < Test::Unit::TestCase
     assert_equal("Xenophantes'",
                  autoren(:autor_xenophantes).genitiv)
   end
-  
+   
   def test_kurzname
     assert_equal("",
                  Autor.find(autoren(:null_autor).id).kurzname)
@@ -38,6 +38,28 @@ class AutorTest < Test::Unit::TestCase
                  autoren(:autor_vollstaendig_mit_geburtsjahr_und_todesjahr).kurzname)
     assert_equal("Vorname Nachname",
                  autoren(:autor_vollstaendig_mit_geburtsjahr_und_todesjahr_ungesichert).kurzname)
+  end
+
+  def test_nachname_vorname
+    assert_equal("",
+                 Autor.find(autoren(:null_autor).id).nachname_vorname)
+    assert_equal("",
+                 autoren(:null_autor).nachname_vorname)
+    assert_equal("Vorname",
+                 autoren(:autor_mit_vornamen).nachname_vorname)
+    assert_equal("Nachname, Vorname",
+                 autoren(:autor_mit_vornamen_und_nachnamen).nachname_vorname)
+    assert_equal("Nachname",
+                 autoren(:autor_mit_nachnamen).nachname_vorname)
+
+    assert_equal("Nachname, Vorname",
+                 autoren(:autor_vollstaendig_mit_geburtsjahr).nachname_vorname)
+    assert_equal("Nachname, Vorname",
+                 autoren(:autor_vollstaendig_mit_todesjahr).nachname_vorname)
+    assert_equal("Nachname, Vorname",
+                 autoren(:autor_vollstaendig_mit_geburtsjahr_und_todesjahr).nachname_vorname)
+    assert_equal("Nachname, Vorname",
+                 autoren(:autor_vollstaendig_mit_geburtsjahr_und_todesjahr_ungesichert).nachname_vorname)
   end
 
   def test_zeigeNamen

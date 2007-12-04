@@ -9,11 +9,7 @@ class Autor < ActiveRecord::Base
     str = vorname.blank? ? "" : vorname
 
     if not nachname.blank? then
-      if not str.blank? then
-        str += " "+nachname
-      else
-        str = nachname
-      end
+      str += (str.blank? ? "" : " ")+nachname
     end
 
     return str
@@ -31,17 +27,19 @@ class Autor < ActiveRecord::Base
     end
   end
 
-  def zeigeNamen
+  def nachname_vorname
     str = vorname.blank? ? "" : vorname
 
     if not nachname.blank? then
-      if not str.blank? then
-        str = nachname + ", " + str
-      else
-        str = nachname
-      end
+      str = nachname + (str.blank? ? "" : ", " + str)
     end
 
+    return str
+  end
+
+  def zeigeNamen
+    str = nachname_vorname
+    
     if (geburtsjahr != nil) && (todesjahr != nil) then
       str += " ("+zeigeGeburtsjahr+"-"+zeigeTodesjahr+")"
     elsif (geburtsjahr != nil) then
