@@ -13,7 +13,12 @@ class OnlinetexteController < ApplicationController
   before_filter :redirect_to_homepage, :except => [:list, :show]
 
   def list
-    @onlinetext_pages, @onlinetexte = paginate :onlinetexte, :per_page => 10, :order => 'titel', :include => :autoren
+    if params[:format].blank?
+      @onlinetext_pages, @onlinetexte = paginate :onlinetexte, :per_page => 10, :order => 'titel', :include => :autoren
+    else
+      @onlinetext_pages, @onlinetexte = paginate :onlinetexte, :per_page => 10, :order => 'titel',
+        :include => [:onlinetextelinks, :autoren], :conditions => ["onlinetextelinks.mime_typ = ?", params[:format]]
+    end
   end
 
   def show
