@@ -2,6 +2,10 @@ class Autor < ActiveRecord::Base
 	has_and_belongs_to_many  :onlinetexte
 	has_many  :autorenlinks
 
+  def to_param
+    return "#{id}-#{kurzname.normalisiert.gsub(/[^a-z0-9]+/i, '-')}"
+  end
+
   MONATSNAMEN = [nil, "Januar", "Februar", "März", "April", "Mai", "Juni",
     "Juli", "August", "September", "Oktober", "November", "Dezember"]
 

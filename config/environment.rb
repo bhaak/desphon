@@ -67,3 +67,12 @@ end
 # Mime::Type.register "application/x-mobile", :mobile
 
 # Include your application configuration below
+
+  
+# mehrfaches suchen-und-ersetzen in einem Aufruf
+class String
+  def normalisiert
+    self.downcase.gsub(/ö/, 'oe').gsub(/ä/, 'ae').gsub(/ü/, 'ue').gsub(/ß/, 'ss')
+  end
+end
+
