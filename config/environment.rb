@@ -72,7 +72,7 @@ end
 # mehrfaches suchen-und-ersetzen in einem Aufruf
 class String
   def normalisiert
-    self.downcase.gsub(/ö/, 'oe').gsub(/ä/, 'ae').gsub(/ü/, 'ue').gsub(/ß/, 'ss')
+    self.downcase.gsub(/Ä/, 'ae').gsub(/ä/, 'ae').gsub(/Ö/, 'oe').gsub(/ö/, 'oe').gsub(/Ü/, 'ue').gsub(/ü/, 'ue').gsub(/ß/, 'ss')
   end
 end
 
