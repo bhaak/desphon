@@ -15,12 +15,13 @@ ActionController::Routing::Routes.draw do |map|
 
   # Allow downloading Web Service WSDL as a file with an extension
   # instead of a file named 'wsdl'
-  map.connect '/desphon/:controller/service.wsdl', :action => 'wsdl'
+  #map.connect '/desphon/:controller/service.wsdl', :action => 'wsdl'
 
   # Install the default route as the lowest priority.
   map.connect '/desphon/:controller/:action/:id.:format'
   map.connect '/desphon/:controller/:action/:id'
 
 	# RSS
-	map.connect '/desphon/rss.xml', :controller => 'homepage', :action => 'rss'
+	#map.connect '/desphon/rss.xml', :controller => 'homepage', :action => 'rss'
+  map.rss '/desphon/rss.xml', :controller => 'homepage', :action => 'rss'
 end
