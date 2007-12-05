@@ -3,10 +3,10 @@
 
 <ul>
 <% if not @autor.zeigeGeburtsdatum.blank? then -%>
-<li><b>Geboren: </b><%= @autor.zeigeGeburtsdatum %><%= " in " + @autor.geburtsort if @autor.geburtsort != "" %></li>
+<li><b>Geboren: </b><%= @autor.zeigeGeburtsdatum %><%= " in " + @autor.geburtsort if not @autor.geburtsort.blank? %></li>
 <% end -%>
 <% if not @autor.zeigeTodesdatum.blank? then -%>
-<li><b>Gestorben: </b><%= @autor.zeigeTodesdatum %><%= " in " + @autor.todesort if @autor.todesort != "" %></li>
+<li><b>Gestorben: </b><%= @autor.zeigeTodesdatum %><%= " in " + @autor.todesort if not @autor.todesort.blank? %></li>
 <% end -%>
 </ul>
 
