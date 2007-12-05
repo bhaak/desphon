@@ -1,0 +1,8 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+eins:
+  autor_id: 8
+  onlinetext_id: 1
+
+eins:
+  autor_id: 9
+  onlinetext_id: 2

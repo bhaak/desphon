@@ -1,0 +1,8 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+einlink:
+  onlinetext_id: 1
+  url: 'http://www.google.ch/'
+  mime_typ: 'image/png'
+  created_at: '2007-07-02 21:09:34'
+  updated_at: '2007-07-02 21:09:34'
+

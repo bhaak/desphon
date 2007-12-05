@@ -1,5 +1,32 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-one:
+#
+# id integer primary key,
+# titel text,
+# buchtitel text,
+# verlag text,
+# isbn_issn text,
+# jahr integer,
+# sprache text,
+# originalsprache text,
+# beschreibungslink text,
+# format text,
+# typ text,
+# empfohlener_link boolean,
+# beschreibung text,
+# autor_id integer,
+# created_at timestamptz,
+# updated_at timestamptz,
+#
+leer:
+  id: 3
+
+ein_text:
   id: 1
-two:
+  titel: 'Die Leiden der O' 
+  format: 'text/plain'
+  
+zweiter_text:
   id: 2
+  titel: 'Kommst du nach Spa...' 
+  format: 'image/png'
+  empfohlener_link: 't'
