@@ -1,0 +1,30 @@
+#container {
+  mmarginargin: 0 auto;
+  padding: 0;
+}
+
+#inhalt {
+  padding: 0;
+  margin-left: 10em;
+	position: relative;
+}
+
+#test {
+	position: relative;
+}
+#navigation {
+  top: 0em;
+	left: 0em;
+	bottom: 0em;
+	position: absolute;
+  width: 10em;
+  margin: 0;
+  padding: 15px 0 0 0;
+}
+
+#fusszeile {
+  clear: left;
+  padding: 0;
+  margin: 0;
+}
+

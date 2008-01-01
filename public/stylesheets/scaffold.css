@@ -1,3 +1,4 @@
+/*
 body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, td {
@@ -77,4 +78,68 @@ span.beschreibung {
   text-indent: -2em;
   padding-left: 2em;
   display: block;
+}
+
+div.statistik, div.empfohlener_link {
+  background-color: white;
+  border: 0.1em solid silver;
+  
+} 
+div.aussen, div.innen { 
+  border: 0.2em solid black;
+}
+*/
+
+#container { 
+  background-color: #bbb;
+  border: 1px solid red;
+}
+
+#inhalt { 
+  min-height: 500px;
+  border: 1px solid red;
+  background-color: #0bb;
+}
+
+
+#navigation {
+  color:#ffffff;
+  background-color: #ccc;
+  border: 1px solid green;
+}
+
+#fusszeile {
+  background-color: #E0A3B7;
+}
+
+
+/*
+html, body {
+  margin: 0;
+  min-height: 100%;
+}
+*/
+
+/* */
+.statistik, .empfohlener_link {
+  font-size: 70%;
+	border: 1px solid black;
+	margin: 2px;
+	padding: 2px;
+}
+
+.statistik * li {
+	display: block;
+	text-indent: 0em;
+	border: 1px solid red;
+}
+
+.statistik ul {
+	display: block;
+	margin: 0;
+	padding-left: 0;
+	border: 1px solid blue;
+}
+.statistik ul ul {
+	padding-left: 1em;
 }

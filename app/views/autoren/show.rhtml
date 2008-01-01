@@ -13,7 +13,7 @@
 <%= mail_to "bhaak@gmx.net", "E-Mail-Kommentar", :subject => "[desphon] "+@autor.zeigeNamen %>
 
 <% if @autorisiert then -%>
-<%= link_to 'Ändern', :action => 'edit', :id => @autor %> |
+| <%= link_to 'Ändern', :action => 'edit', :id => @autor %> |
 <%= link_to 'Löschen', :action => 'destroy', :id => @autor %>
 <% end -%>
 

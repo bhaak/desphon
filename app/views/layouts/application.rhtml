@@ -3,21 +3,34 @@
 <html>
   <head>
     <title><%= @title.blank? ? "desphon: Deutschsprachige Phantastik Online" : "desphon: "+@title %></title>
+		<%= stylesheet_link_tag 'layout' %>
 		<%= stylesheet_link_tag 'scaffold' %>
 		<%= auto_discovery_link_tag(:rss, :action => 'rss') %>
   </head>
   <body>
-    <div id="kopfzeile">
-      <%= render :partial => 'homepage/header' -%>
-    </div>
-    <div id="inhalt">
-			<p style="color: green"><%= flash[:notice] %></p>
-			<p style="color: orange"><%= flash[:warning] %></p> 
-			<p style="color: red"><%= flash[:error] %></p> 
-      <%= yield %>
-    </div>
-    <div id="fusszeile">
-      %= render :partial => 'homepage/footer' %>
+    <div id="container">
+			<div id="kopfzeile">
+				<%= render :partial => 'homepage/header' -%>
+			</div>
+
+			<div id="test">
+				<div id="inhalt">
+					<p style="color: green"><%= flash[:notice] %></p>
+					<p style="color: orange"><%= flash[:warning] %></p> 
+					<p style="color: red"><%= flash[:error] %></p> 
+					<%= yield %>
+				</div>
+
+				<div id="navigation">
+					<%= render_partial 'homepage/statistik' %>
+					<%= render_partial 'homepage/empfohlener_text' %>
+				</div>
+
+			</div>
+			
+			<div id="fusszeile">
+				<%= render :partial => 'homepage/footer' %>
+			</div>
     </div>
   </body>
 </html>
