@@ -13,11 +13,19 @@ pdf = mime_typs.inject(0) {|sum, m|  m.mime_typ == "application/pdf" ? sum + m.a
 def link_to_mime(text, mime=text)
   link_to(text, :controller => 'onlinetexte', :action => 'list', :format => mime)
 end
+
+def link_to_veroeffentlicht(text)
+  link_to(text, :controller => 'onlinetexte', :action => 'veroeffentlicht')
+end
+
+zeitraum = Onlinetext.find(:all, :select => "min(jahr) as min, max(jahr) as max")[0]
+min_jahr = zeitraum["min"]
+max_jahr = zeitraum["max"]
 %>
 
 <li><%= Onlinetext.count -%> <%= link_to "Texte", :controller => 'onlinetexte', :action => 'list' -%></li>
-<ul>
-  <%= "<li>Texte: "+txt.to_s+"</li>" if txt > 0 %>
+<li><ul>
+  <%= "<li>Textformat: "+txt.to_s+"</li>" if txt > 0 %>
   <%= "<ul>"+mime_typs.collect {|m| "<li>"+link_to_mime(m.mime_typ)+": "+m.anz+"</li>" if m.mime_typ =~ /^text/ }.join+"</ul>" -%>
   <%= "<li>Audio: "+audio.to_s+"</li>" if audio > 0 %>
   <%= "<ul>"+mime_typs.collect {|m| "<li>"+m.mime_typ+": "+m.anz+"</li>" if m.mime_typ =~ /^audio/ }.join+"</ul>" -%>
@@ -26,7 +34,8 @@ end
         "<li>"+link_to_mime(m.mime_typ)+": "+m.anz+"</li>" if m.mime_typ =~ /^image/
       }.join+"</ul>" -%>
   <%= "<li>"+link_to_mime("PDF", "application/pdf") + ": "+pdf.to_s+"</li>" if pdf > 0 %>
-</ul>
+</ul></li>
+<li><%= link_to_veroeffentlicht("Zeitraum")+": "+min_jahr+"&ndash;"+max_jahr %>
 </ul>
 
 </div>

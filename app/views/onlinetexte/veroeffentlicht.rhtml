@@ -1,0 +1,25 @@
+<h1>Texte im Format bla</h1>
+<% initiale = '' -%>
+<% for onlinetext in @onlinetexte %>
+  <% neu_initiale = onlinetext.jahr %>
+  <% if neu_initiale != initiale then -%>
+    <% initiale = neu_initiale -%>
+    <h3 id="<%= h initiale -%>"><%= h initiale -%></h3>
+  <% end -%>
+  <%= link_to h(onlinetext.titel), :action => 'show', :id => onlinetext %>
+   <%= '('+h(onlinetext.jahr)+')' if not onlinetext.jahr.blank? %>
+  <%= ' von '+onlinetext.autoren.collect { |autor|
+      link_to(autor.kurzname, :controller => 'autoren', :action => 'show', :id => autor) }.join(', ') if onlinetext.autoren.size > 0
+   -%>
+
+  <br />
+<% end %>
+
+<%= link_to 'Vorherige Seite', { :page => @onlinetext_pages.current.previous } if @onlinetext_pages.current.previous %>
+<%= link_to 'Nächste Seite', { :page => @onlinetext_pages.current.next } if @onlinetext_pages.current.next %> 
+
+<br />
+<hr />
+<br />
+
+<%= link_to 'Neuer Text', :action => 'new' if @autorisiert %>

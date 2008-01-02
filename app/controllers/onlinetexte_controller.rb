@@ -21,6 +21,10 @@ class OnlinetexteController < ApplicationController
     end
   end
 
+  def veroeffentlicht
+    @onlinetext_pages, @onlinetexte = paginate :onlinetexte, :per_page => 10, :order => 'jahr,titel', :include => :autoren
+  end
+
   def show
     @onlinetext = Onlinetext.find(params[:id])
     minTime = Time.rfc2822(request.env["HTTP_IF_MODIFIED_SINCE"]) rescue nil
