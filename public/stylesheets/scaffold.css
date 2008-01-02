@@ -131,15 +131,27 @@ html, body {
 .statistik * li {
 	display: block;
 	text-indent: 0em;
-	border: 1px solid red;
+	/*border: 1px solid red;*/
 }
 
 .statistik ul {
 	display: block;
 	margin: 0;
 	padding-left: 0;
-	border: 1px solid blue;
+	/*border: 1px solid blue;*/
 }
 .statistik ul ul {
 	padding-left: 1em;
+}
+
+#fusszeile {
+}
+#fusszeile {
+	text-align: center;
+	vertical-align: middle;
+  font-size: 25%;
+	padding: 0.5ex;
+}
+#fusszeile a {
+	text-decoration: none;
 }
