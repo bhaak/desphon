@@ -1,12 +1,11 @@
 #container {
-  mmarginargin: 0 auto;
+  margin: 0 auto;
   padding: 0;
 }
 
 #inhalt {
   padding: 0;
   margin-left: 10em;
-	position: relative;
 }
 
 #test {
@@ -23,7 +22,6 @@
 }
 
 #fusszeile {
-  clear: left;
   padding: 0;
   margin: 0;
 }

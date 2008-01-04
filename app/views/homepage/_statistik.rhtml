@@ -19,8 +19,8 @@ def link_to_veroeffentlicht(text)
 end
 
 zeitraum = Onlinetext.find(:all, :select => "min(jahr) as min, max(jahr) as max")[0]
-min_jahr = zeitraum["min"]
-max_jahr = zeitraum["max"]
+min_jahr = zeitraum["min"].to_s
+max_jahr = zeitraum["max"].to_s
 %>
 
 <li><%= Onlinetext.count -%> <%= link_to "Texte", :controller => 'onlinetexte', :action => 'list' -%></li>

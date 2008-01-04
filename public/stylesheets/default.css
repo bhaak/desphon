@@ -132,6 +132,7 @@ html, body {
 	display: block;
 	text-indent: 0em;
 	/*border: 1px solid red;*/
+	list-style: none; /* IE braucht das */
 }
 
 .statistik ul {
@@ -149,7 +150,7 @@ html, body {
 #fusszeile {
 	text-align: center;
 	vertical-align: middle;
-  font-size: 25%;
+  font-size: 60%;
 	padding: 0.5ex;
 }
 #fusszeile a {

@@ -9,7 +9,7 @@ class Autorenlink < ActiveRecord::Base
     when "gutenberg.org"
 			return "http://www.gutenberg.org/author/"+url
     when "gutenberg.spiegel.de"
-			return "http://gutenberg.spiegel.de/autoren/"+url
+			return "http://gutenberg.spiegel.de/autoren/"+url+".htm"
     when "fictionfantasy.de"
       return "http://www.fictionfantasy.de/load.php?name=News&file=article&sid="+url
     when "homepage", "sonstiges"

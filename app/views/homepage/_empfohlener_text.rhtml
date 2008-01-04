@@ -1,5 +1,4 @@
 <div class="empfohlener_link">
-<p>
 <b>Linkempfehlung</b>
 <%
 	onlinetexte =  Onlinetext.find(:all, :conditions => "empfohlener_link = 't'")
@@ -7,14 +6,10 @@
   srand(Time.now.to_i.divmod(180)[0])
 	onlinetext = onlinetexte[rand(onlinetexte.size)]
   autoren = onlinetext.autoren
--%>
-</p>
-<p>
+-%><br/>
+<%= link_to onlinetext.titel, { :action => "show", :id => onlinetext.id, :controller => "onlinetexte" } -%><br/>
+von<br/>
 <% for autor in autoren -%>
 <%= link_to h(autor.kurzname), :action => 'show', :id => autor, :controller => "autoren" %><br/>
 <% end -%>
-</p>
-<p>
-<%= link_to onlinetext.titel, { :action => "show", :id => onlinetext.id, :controller => "onlinetexte" } -%>
-</p>
 </div>
