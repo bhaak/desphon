@@ -24,4 +24,7 @@ ActionController::Routing::Routes.draw do |map|
 	# RSS
 	#map.connect '/desphon/rss.xml', :controller => 'homepage', :action => 'rss'
   map.rss '/desphon/rss.xml', :controller => 'homepage', :action => 'rss'
+
+	# Comatose
+	map.comatose_admin '/desphon/comatose_admin'
 end
