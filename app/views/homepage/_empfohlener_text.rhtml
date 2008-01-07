@@ -1,9 +1,9 @@
 <div class="empfohlener_link">
-<b>Linkempfehlung</b>
+<b>Aktuelle Empfehlung</b>
 <%
 	onlinetexte =  Onlinetext.find(:all, :conditions => "empfohlener_link = 't'")
 	#onlinetext = Onlinetext.find(:first)
-  srand(Time.now.to_i.divmod(180)[0])
+  srand(Time.now.to_i.divmod(180)[0]) # alle x Sekunden Empfehlung wechseln
 	onlinetext = onlinetexte[rand(onlinetexte.size)]
   autoren = onlinetext.autoren
 -%><br/>

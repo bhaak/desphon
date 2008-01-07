@@ -14,8 +14,10 @@ class OnlinetexteController < ApplicationController
 
   def list
     if params[:format].blank?
+      @seiten_titel = "Texte"
       @onlinetext_pages, @onlinetexte = paginate :onlinetexte, :per_page => 10, :order => 'titel', :include => :autoren
     else
+      @seiten_titel = "Texte im Format "+params[:format]
       @onlinetext_pages, @onlinetexte = paginate :onlinetexte, :per_page => 10, :order => 'titel',
         :include => [:onlinetextelinks, :autoren], :conditions => ["onlinetextelinks.mime_typ = ?", params[:format]]
     end
