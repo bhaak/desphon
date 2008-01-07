@@ -25,7 +25,7 @@ module ApplicationHelper
     result = "<div class='toc'>"
     for buchstabe in 'A'..'Z'
       if alphabet.include?(buchstabe) then
-        result << "<a href='#{buchstabe}'>#{buchstabe}</a> "
+        result << "<a href='##{buchstabe}'>#{buchstabe}</a> "
       else
         result << "<span>#{buchstabe}</span> "
       end
