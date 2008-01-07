@@ -1,0 +1,1 @@
+module Comatose::ControllerHelper; end
