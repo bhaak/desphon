@@ -1,3 +1,4 @@
+<% cache(:controller => "alle", :action => "statistik") do -%>
 <div class="statistik">
 Statistik
 <ul>
@@ -26,16 +27,17 @@ max_jahr = zeitraum["max"].to_s
 <li><%= Onlinetext.count -%> <%= link_to "Texte", :controller => 'onlinetexte', :action => 'list' -%></li>
 <li><ul>
   <%= "<li>Textformat: "+txt.to_s+"</li>" if txt > 0 %>
-  <%= "<ul>"+mime_typs.collect {|m| "<li>"+link_to_mime(m.mime_typ)+": "+m.anz+"</li>" if m.mime_typ =~ /^text/ }.join+"</ul>" -%>
+  <%= "<li><ul>"+mime_typs.collect {|m| "<li>"+link_to_mime(m.mime_typ)+": "+m.anz+"</li>" if m.mime_typ =~ /^text/ }.join+"</ul></li>" -%>
   <%= "<li>Audio: "+audio.to_s+"</li>" if audio > 0 %>
-  <%= "<ul>"+mime_typs.collect {|m| "<li>"+m.mime_typ+": "+m.anz+"</li>" if m.mime_typ =~ /^audio/ }.join+"</ul>" -%>
+  <%= "<li><ul>"+mime_typs.collect {|m| "<li>"+link_to_mime(m.mime_typ)+": "+m.anz+"</li>" if m.mime_typ =~ /^audio/ }.join+"</ul></li>" -%>
   <%= "<li>Scans: "+img.to_s+"</li>" if img > 0 %>
-  <%= "<ul>"+mime_typs.collect {|m|
+  <%= "<li><ul>"+mime_typs.collect {|m|
         "<li>"+link_to_mime(m.mime_typ)+": "+m.anz+"</li>" if m.mime_typ =~ /^image/
-      }.join+"</ul>" -%>
+      }.join+"</ul></li>" -%>
   <%= "<li>"+link_to_mime("PDF", "application/pdf") + ": "+pdf.to_s+"</li>" if pdf > 0 %>
 </ul></li>
-<li><%= link_to_veroeffentlicht("Zeitraum")+": "+min_jahr+"&ndash;"+max_jahr %>
+<li><%= link_to_veroeffentlicht("Zeitraum")+": "+min_jahr+"&ndash;"+max_jahr %></li>
 </ul>
 
 </div>
+<% end -%>

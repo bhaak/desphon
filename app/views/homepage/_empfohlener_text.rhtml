@@ -1,9 +1,12 @@
+<% jetzt = Time.now.to_i
+ # fuenf Minuten langen cachen
+ cache(:controller => "alle", :action => "empfohlener_link_"+(jetzt.divmod(300)[0]).to_s) do -%>
 <div class="empfohlener_link">
 <b>Aktuelle Empfehlung</b>
 <%
 	onlinetexte =  Onlinetext.find(:all, :conditions => "empfohlener_link = 't'")
 	#onlinetext = Onlinetext.find(:first)
-  srand(Time.now.to_i.divmod(180)[0]) # alle x Sekunden Empfehlung wechseln
+  srand(jetzt) 
 	onlinetext = onlinetexte[rand(onlinetexte.size)]
   autoren = onlinetext.autoren
 -%><br/>
@@ -13,3 +16,4 @@ von<br/>
 <%= link_to h(autor.kurzname), :action => 'show', :id => autor, :controller => "autoren" %><br/>
 <% end -%>
 </div>
+<% end -%>
