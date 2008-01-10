@@ -24,8 +24,6 @@ class AddComatoseSupport < ActiveRecord::Migration
       t.column "created_on",  :datetime
     end
     Comatose::Page.create_versioned_table
-    puts "Creating the default 'Home Page'..."
-    Comatose::Page.create( :title=>'Home Page', :body=>"h1. Welcome\n\nYour content goes here...", :author=>'System' )
   end
 
   def self.down

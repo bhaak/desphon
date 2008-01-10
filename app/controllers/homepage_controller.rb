@@ -1,6 +1,4 @@
 class HomepageController < ApplicationController
-  def index
-	end
 
 	def rss
     minTime = Time.rfc2822(request.env["HTTP_IF_MODIFIED_SINCE"]) rescue nil
@@ -13,4 +11,11 @@ class HomepageController < ApplicationController
       render :layout => false 
     end
   end
+
+
+	def neuigkeiten
+    @news = Comatose::Page.find_by_slug('news')
+	end
+	alias :index :neuigkeiten
+
 end
