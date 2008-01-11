@@ -10,7 +10,7 @@
 	onlinetext = onlinetexte[rand(onlinetexte.size)]
   autoren = onlinetext.autoren
 -%><br/>
-<%= link_to onlinetext.titel, { :action => "show", :id => onlinetext.id, :controller => "onlinetexte" } -%><br/>
+<%= link_to onlinetext.titel, { :action => "show", :id => onlinetext, :controller => "onlinetexte" } -%><br/>
 von<br/>
 <% for autor in autoren -%>
 <%= link_to h(autor.kurzname), :action => 'show', :id => autor, :controller => "autoren" %><br/>
