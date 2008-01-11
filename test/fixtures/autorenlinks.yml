@@ -31,7 +31,7 @@ gutenberg_org:
 
 gutenberg_spiegel_de:
   id: 6
-  url: herzl.htm
+  url: herzl
   typ: gutenberg.spiegel.de
 
 fictionfantasy_de:
