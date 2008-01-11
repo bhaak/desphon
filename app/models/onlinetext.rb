@@ -3,7 +3,7 @@ class Onlinetext < ActiveRecord::Base
 	has_many :onlinetextelinks
 
   def to_param
-    return "#{id}-#{titel.normalisiert.gsub(/[^a-z0-9]+/i, '-')}"
+    return "#{id}-#{titel.suchmaschinenfreundlich}"
   end
 
 end

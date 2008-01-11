@@ -3,7 +3,7 @@ class Autor < ActiveRecord::Base
 	has_many  :autorenlinks
 
   def to_param
-    return "#{id}-#{kurzname.normalisiert.gsub(/[^a-z0-9]+/i, '-')}"
+    return "#{id}-#{kurzname.suchmaschinenfreundlich}"
   end
 
   MONATSNAMEN = [nil, "Januar", "Februar", "März", "April", "Mai", "Juni",

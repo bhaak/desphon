@@ -72,7 +72,11 @@ end
 # mehrfaches suchen-und-ersetzen in einem Aufruf
 class String
   def normalisiert
-    self.downcase.gsub(/Ä/, 'ae').gsub(/ä/, 'ae').gsub(/Ö/, 'oe').gsub(/ö/, 'oe').gsub(/Ü/, 'ue').gsub(/ü/, 'ue').gsub(/ß/, 'ss')
+    return self.downcase.gsub(/Ä/, 'ae').gsub(/ä/, 'ae').gsub(/Ö/, 'oe').gsub(/ö/, 'oe').gsub(/Ü/, 'ue').gsub(/ü/, 'ue').gsub(/ß/, 'ss')
   end
+
+	def suchmaschinenfreundlich
+		return self.normalisiert.gsub(/[^a-zA-Z0-9]+/, '-')
+	end
 end
 

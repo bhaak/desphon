@@ -27,4 +27,9 @@ class ApplicationTest < Test::Unit::TestCase
                  "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg".normalisiert)
   end
 
+  def test_suchmaschinenfreundlich
+    assert_equal("falsches-ueben-von-xylophonmusik-quaelt-jeden-groesseren-zwerg",
+                 "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg".suchmaschinenfreundlich)
+  end
+
 end
