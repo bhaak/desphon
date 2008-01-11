@@ -21,8 +21,8 @@ class Onlinetexte < ActiveRecord::Migration
 									" empfohlener_link boolean,\n"+ 
 									" beschreibung text,\n"+ 
 									" created_at timestamptz,\n"+ 
-									" updated_at timestamptz,\n"+ 
-									" FOREIGN KEY(autor_id) REFERENCES autoren(id))" 
+									" updated_at timestamptz\n"+ 
+									")" 
   end
 
   def self.down

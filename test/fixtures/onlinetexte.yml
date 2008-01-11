@@ -23,10 +23,8 @@ leer:
 ein_text:
   id: 1
   titel: 'Die Leiden der O' 
-  format: 'text/plain'
   
 zweiter_text:
   id: 2
   titel: 'Kommst du nach Spa...' 
-  format: 'image/png'
   empfohlener_link: 't'
