@@ -30,21 +30,21 @@
 <h3>Links</h3>
 <table>
   <tr>
-    <th>URL</th>
-    <th>Uebersichtslink</th>
-    <th>mime_typ</th>
+    <th>Format</th>
+    <th>Direktlink</th>
+    <th>Übersichtslink</th>
   </tr>
 
 <% for url in @onlinetext.onlinetextelinks %>
   <tr>
+    <td><%=h url.mime_typ %></td>
     <td><a href="<%= url.url -%>"><%=h url.zeige_url -%></a></td>
     <td><%=h url.uebersichtsurl %></td>
-    <td><%=h url.mime_typ %></td>
 
 <% if @autorisiert then -%>
 		<td><%= link_to 'Ändern', :controller => 'onlinetextelinks', :action => 'edit', :id => url %></td>
     <td><%= link_to 'Löschen', { :controller => 'onlinetextelinks', :action => 'destroy', :id => url },
-            :confirm => 'Are you sure?', :method => :post %></td>
+            :confirm => 'Wirklich löschen?', :method => :post %></td>
 <% end -%>
   </tr>
 <% end %>
