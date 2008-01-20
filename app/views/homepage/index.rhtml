@@ -1,5 +1,5 @@
 <%= render :partial => 'neuigkeiten', :locals => {:news => @news, :range => 0..2} -%>
 
-<%= '<span class="neuigkeiten_link"'+
-    link_to("ältere Neuigkeiten &hellip;", :action=>'neuigkeiten')+
-		'</span>' if @news.children.length > 3 -%>
+<%= '<div class="neuigkeiten_link">'+
+    link_to("weitere Nachrichten &hellip;", :action=>'neuigkeiten')+
+		'</div>' if @news.children.length > 3 -%>
