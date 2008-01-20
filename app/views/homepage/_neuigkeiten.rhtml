@@ -1,6 +1,7 @@
 <% news.children.reverse.slice(range).each {|n| -%>
-<div style="margin: 10px; background-color: yellow">
+<div class="neuigkeit">
 <h3 id="<%= n.slug -%>"><%= n.title -%></h3>
-<%= n.to_html -%>
+<div class="datum"><%= n.created_on.strftime("%d. %b %Y %H:%M") -%></div>
+<div class="text"><%= n.to_html -%></div>
 </div>
 <% } -%>
