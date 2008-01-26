@@ -113,6 +113,7 @@ h3 {
   color:#ffffff;
   background-color: #ccc;
   border: 1px solid green;
+  padding-top: 0;
 }
 
 #fusszeile {
@@ -128,7 +129,7 @@ html, body {
 */
 
 /* */
-.statistik, .empfohlener_link {
+.statistik, .empfohlener_link, .links {
   font-size: 70%;
 	border: 1px solid black;
 	margin: 2px;
@@ -164,6 +165,11 @@ html, body {
 	text-decoration: none;
 }
 
+#yield {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  overflow-x: auto;
+}
 
 .gerade {
   background-color: #aaa;
@@ -182,7 +188,6 @@ html, body {
 
 .neuigkeit { 
   margin-right: 0.5em;
-  margin-left: 0.5em;
   margin-bottom: 1em;
   max-width: 70ex;
 }

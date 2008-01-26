@@ -18,17 +18,20 @@
         <%= render :partial => 'homepage/header' -%>
       </div>
 
-      <div id="test">
+      <div id="inhaltscontainer">
         <div id="inhalt">
           <p style="color: green"><%= flash[:notice] %></p>
           <p style="color: orange"><%= flash[:warning] %></p> 
           <p style="color: red"><%= flash[:error] %></p> 
-          <%= yield %>
+					<div id="yield">
+						<%= yield %>
+					</div>
         </div>
 
         <div id="navigation">
           <%= render_partial 'homepage/statistik' -%>
           <%= render_partial 'homepage/empfohlener_text' -%>
+          <%= render_partial 'homepage/links' -%>
         </div>
       </div>
       
