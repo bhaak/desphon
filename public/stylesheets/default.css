@@ -242,3 +242,5 @@ html, body {
 .nobullets {
 	list-style: square;
 }
+
+div.imagelink a img { border: none; text-decoration: none; }

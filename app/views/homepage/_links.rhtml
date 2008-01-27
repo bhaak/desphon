@@ -2,5 +2,7 @@
 <div class="links">
 <%= link_to "FAQ", :action => "faq", :controller => "homepage" -%><br />
 <%= link_to "&uuml;ber", :action => "ueber", :controller => "homepage" -%><br />
+<br />
+<div class='imagelink'><%= link_to image_tag("rss20.gif",:alt => "RSS 2.0"), :controller => 'homepage', :action => 'rss' -%></div>
 </div>
 <% end -%>
