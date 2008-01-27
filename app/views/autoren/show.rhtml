@@ -18,8 +18,8 @@
 <% end -%>
 
 <% autorenlinks = Autorenlink.find(:all, :conditions => ["autor_id = ?", @autor.id]) -%>
-<hr />
 <% if autorenlinks.size > 0 -%>
+<hr />
 <h3>Weblinks</h3>
 <table>
   <!--<tr>
@@ -43,7 +43,7 @@
 <% end %>
 </table>
 <% end %>
-<%= link_to 'Neuer Autorenlink', :controller => 'autorenlinks', :action => 'new', :autor => @autor if @autorisiert -%>
+<br /><%= link_to 'Neuer Autorenlink', :controller => 'autorenlinks', :action => 'new', :autor => @autor if @autorisiert -%>
 
 <% onlinetexte = @autor.onlinetexte -%>
 <% if onlinetexte.size > 0 -%>
