@@ -18,4 +18,9 @@ class HomepageController < ApplicationController
 	end
 	alias :index :neuigkeiten
 
+  def faq
+    @title = "FAQ - vermeintlich häufig Gefragtes"
+  end
+  def ueber
+  end
 end

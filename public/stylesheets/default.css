@@ -186,14 +186,14 @@ html, body {
   max-width: 70ex;
 }
 
-.neuigkeit { 
+.faq_eintrag, .neuigkeit { 
   margin-right: 0.5em;
   margin-bottom: 1em;
   max-width: 70ex;
 }
 
 
-.neuigkeit h3 { 
+.faq_eintrag h3, .neuigkeit h3 { 
   border: 1px solid #727272;
   border-bottom: 0px solid #727272;
   margin: 0;
@@ -220,7 +220,7 @@ html, body {
   font-size: 60%;
   background-color: #dedede;
 }
-.neuigkeit .text {
+.faq_eintrag .text, .neuigkeit .text {
   border: 1px solid #727272;
   padding: 0px;
   padding-left: 0.3em;
@@ -239,3 +239,6 @@ html, body {
   -opera-border-radius-bottomright: 0.4ex;
 }
 
+.nobullets {
+	list-style: square;
+}
