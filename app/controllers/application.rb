@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
   def autorisiert?
     @autorisiert = (ENV['REMOTEHOST'] == 'loki.local' && request.remote_ip == '192.168.0.246')
-    # @autorisiert = true
+    @autorisiert ||= true if not in_production?
     true
   end
 
