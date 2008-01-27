@@ -30,10 +30,11 @@ class OnlinetexteController < ApplicationController
   def show
     @onlinetext = Onlinetext.find(params[:id])
     minTime = Time.rfc2822(request.env["HTTP_IF_MODIFIED_SINCE"]) rescue nil
+
+    response.headers['Last-Modified'] = @onlinetext.updated_at.httpdate if in_production?
+
     if minTime and @onlinetext.updated_at <= minTime 
       render :nothing => true, :status => 304
-    else
-      response.headers['Last-Modified'] = @onlinetext.updated_at.httpdate if in_production?
     end
   end
 
