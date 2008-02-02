@@ -1,0 +1,21 @@
+#navigation, .toc {
+  display: none;
+}
+
+body, p, td, th, ul, a {
+  background-color: white;
+  color: black;
+  font-family: "Times New Roman", serif;
+  font-size: 12pt;
+}
+
+.e-mail { display: inline; }
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#fusszeile { 
+  text-align: center;
+}
