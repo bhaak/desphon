@@ -14,7 +14,8 @@ class AutorenController < ApplicationController
   before_filter :redirect_to_homepage, :except => [:list, :show]
 
   def list
-    @autor_pages, @autoren = paginate :autoren, :per_page => 10, :order => 'nachname, vorname'
+    # @autor_pages, @autoren = paginate :autoren, :per_page => 20, :order => 'nachname, vorname'
+    @autoren = Autor.find(:all, :order => 'nachname, vorname')
   end
 
   def show

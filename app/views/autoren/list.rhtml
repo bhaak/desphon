@@ -14,8 +14,10 @@
   <%= link_to h(autor.zeigeNamen), :action => 'show', :id => autor %><br/>
 <% end %>
 
+<% if false then -%>
 <%= link_to 'Vorherige Seite', { :page => @autor_pages.current.previous } if @autor_pages.current.previous %>
 <%= link_to 'Nächste Seite', { :page => @autor_pages.current.next } if @autor_pages.current.next %> 
+<% end -%>
 
 <br />
 

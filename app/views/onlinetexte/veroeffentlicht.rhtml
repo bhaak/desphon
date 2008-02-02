@@ -1,8 +1,8 @@
 <h1>Texte sortiert nach Veröffentlichungsdatum</h1>
 <% initiale = '' -%>
 <% gerade = 0 -%>
-<% for onlinetext in @onlinetexte %>
-  <% neu_initiale = onlinetext.jahr %>
+<% for onlinetext in @onlinetexte -%>
+  <% neu_initiale = onlinetext.jahr -%>
   <% if neu_initiale != initiale then -%>
     <% initiale = neu_initiale -%>
     <h3 id="<%= h initiale -%>"><%= h initiale -%></h3>
@@ -17,10 +17,12 @@
    -%>
 	</div>
 
-<% end %>
+<% end -%>
 
+<% if false then -%>
 <%= link_to 'Vorherige Seite', { :page => @onlinetext_pages.current.previous } if @onlinetext_pages.current.previous %>
 <%= link_to 'Nächste Seite', { :page => @onlinetext_pages.current.next } if @onlinetext_pages.current.next %> 
+<% end -%>
 
 <br />
 <hr />

@@ -16,11 +16,13 @@
     <td><%= link_to 'Edit', :action => 'edit', :id => onlinetextelink %></td>
     <td><%= link_to 'Destroy', { :action => 'destroy', :id => onlinetextelink }, :confirm => 'Are you sure?', :method => :post %></td>
   </tr>
-<% end %>
+<% end -%>
 </table>
 
+<% if false then -%>
 <%= link_to 'Previous page', { :page => @onlinetextelink_pages.current.previous } if @onlinetextelink_pages.current.previous %>
 <%= link_to 'Next page', { :page => @onlinetextelink_pages.current.next } if @onlinetextelink_pages.current.next %> 
+<% end -%>
 
 <br />
 

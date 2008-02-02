@@ -20,8 +20,10 @@
   <br />
 <% end %>
 
+<% if false then -%>
 <%= link_to 'Vorherige Seite', { :page => @onlinetext_pages.current.previous } if @onlinetext_pages.current.previous %>
 <%= link_to 'Nächste Seite', { :page => @onlinetext_pages.current.next } if @onlinetext_pages.current.next %> 
+<% end -%>
 
 <br />
 <hr />
