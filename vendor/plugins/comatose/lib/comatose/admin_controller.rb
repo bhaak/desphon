@@ -153,7 +153,7 @@ module Comatose
       else
         true
       end
-      return (ENV['REMOTEHOST'] == 'loki.local' && request.remote_ip == '192.168.0.246')
+      return (ENV['REMOTEHOST'] == 'loki.local' && request.remote_ip == '192.168.0.245')
     end
 
     def fetch_author_name
