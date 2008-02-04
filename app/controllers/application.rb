@@ -26,5 +26,8 @@ class ApplicationController < ActionController::Base
   def in_production?
     return ENV['RAILS_ENV'] == 'production'
   end
-  
+
+  def cache_loeschen
+    expire_fragment(:controller => "alle", :action => "statistik")
+  end
 end

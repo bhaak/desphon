@@ -15,6 +15,7 @@ class OnlinetextelinksController < ApplicationController
   end
 
   def create
+    cache_loeschen
     @onlinetextelink = Onlinetextelink.new(params[:onlinetextelink])
     if @onlinetextelink.save
       flash[:notice] = 'Onlinetextelink was successfully created.'
@@ -29,6 +30,7 @@ class OnlinetextelinksController < ApplicationController
   end
 
   def update
+    cache_loeschen
     @onlinetextelink = Onlinetextelink.find(params[:id])
     if @onlinetextelink.update_attributes(params[:onlinetextelink])
       flash[:notice] = 'Onlinetextelink was successfully updated.'
@@ -39,6 +41,7 @@ class OnlinetextelinksController < ApplicationController
   end
 
   def destroy
+    cache_loeschen
     @onlinetextelink = Onlinetextelink.find(params[:id])
     onlinetextelink.destroy
     redirect_zum_onlinetext

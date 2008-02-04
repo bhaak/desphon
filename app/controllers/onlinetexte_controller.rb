@@ -46,6 +46,7 @@ class OnlinetexteController < ApplicationController
   end
 
   def create
+    cache_loeschen
     @onlinetext = Onlinetext.new(params[:onlinetext])
     if @onlinetext.save
       flash[:notice] = 'Onlinetext was successfully created.'
@@ -56,10 +57,12 @@ class OnlinetexteController < ApplicationController
   end
 
   def edit
+    cache_loeschen
     @onlinetext = Onlinetext.find(params[:id])
   end
 
   def update
+    cache_loeschen
     @onlinetext = Onlinetext.find(params[:id])
     if @onlinetext.update_attributes(params[:onlinetext])
       flash[:notice] = 'Onlinetext was successfully updated.'
@@ -70,6 +73,7 @@ class OnlinetexteController < ApplicationController
   end
 
   def destroy
+    cache_loeschen
     Onlinetext.find(params[:id]).destroy
     redirect_to :action => 'list'
   end

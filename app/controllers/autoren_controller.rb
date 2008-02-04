@@ -35,6 +35,7 @@ class AutorenController < ApplicationController
   end
 
   def create
+    cache_loeschen
     @autor = Autor.new(params[:autor])
     if @autor.save
       flash[:notice] = 'Autor was successfully created.'
@@ -49,6 +50,7 @@ class AutorenController < ApplicationController
   end
 
   def update
+    cache_loeschen
     @autor = Autor.find(params[:id])
     if @autor.update_attributes(params[:autor])
       flash[:notice] = 'Autor was successfully updated.'
