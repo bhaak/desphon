@@ -2,7 +2,7 @@
  # fuenf Minuten langen cachen
  cache(:controller => "alle", :action => "empfohlener_link_"+(jetzt.divmod(300)[0]).to_s) do -%>
 <div class="empfohlener_link">
-<b>Aktuelle Empfehlung</b>
+<strong>Aktuelle Empfehlung</strong>
 <%
 	onlinetexte =  Onlinetext.find(:all, :conditions => "empfohlener_link = 't'")
 	#onlinetext = Onlinetext.find(:first)
