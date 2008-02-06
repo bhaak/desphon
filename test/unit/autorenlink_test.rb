@@ -5,8 +5,6 @@ class AutorenlinkTest < Test::Unit::TestCase
   fixtures :autorenlinks
 
   def test_links
-    assert_equal("Theodor_Herzl",
-                 autorenlinks(:unbekannt).full_url)
     assert_equal("http://de.wikipedia.org/wiki/Theodor_Herzl",
                  autorenlinks(:de).full_url)
     assert_equal("http://en.wikipedia.org/wiki/Theodor_Herzl",
@@ -21,6 +19,11 @@ class AutorenlinkTest < Test::Unit::TestCase
                  autorenlinks(:gutenberg_spiegel_de).full_url)
     assert_equal("http://www.fictionfantasy.de/load.php?name=News&file=article&sid=3989",
                  autorenlinks(:fictionfantasy_de).full_url)
+
+    assert_equal("http://link_ohne_http.invalid",
+                 autorenlinks(:link_ohne_http).full_url)
+    assert_equal("http://Theodor_Herzl",
+                 autorenlinks(:unbekannt).full_url)
   end
   
   def test_zeige_url
@@ -30,5 +33,8 @@ class AutorenlinkTest < Test::Unit::TestCase
                  autorenlinks(:xenophantes_homepage).zeige_url)
     assert_equal("Eine Beschreibung",
                  autorenlinks(:herzl_mit_beschreibung).zeige_url)
+
+    assert_equal("http://link_ohne_http.invalid",
+                 autorenlinks(:link_ohne_http).full_url)
   end 
 end
