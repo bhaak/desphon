@@ -1,0 +1,17 @@
+root:
+        id: 1
+        title: 'root'
+
+
+faq:
+        id: 2
+        full_path: 'root/faq'
+        title: 'faq'
+        slug: 'faq'
+
+news:
+        id: 3
+        full_path: 'root/news'
+        title: 'news'
+        slug: 'news'
+# INSERT INTO "comatose_pages" VALUES(3,1,'root/news','news','news',NULL,NULL,'Textile',NULL,0,1,'2008-01-08 22:00:03','2008-01-08 22:00:03');

@@ -50,3 +50,8 @@ xenophantes_homepage:
   autor_id: 10
   url: Xenophantes
   typ: homepage
+
+link_ohne_http:
+  id: 10
+  url: link_ohne_http.invalid
+  typ: unbekannt

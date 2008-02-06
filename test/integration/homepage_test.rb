@@ -3,25 +3,26 @@ require "#{File.dirname(__FILE__)}/../test_helper"
 require "rexml/document" 
 
 class HomepageTest < ActionController::IntegrationTest
-  fixtures :autoren, :onlinetexte, :autoren_onlinetexte, :onlinetextelinks
+  fixtures :autoren, :onlinetexte, :autoren_onlinetexte, :onlinetextelinks, :comatose_pages
 
-  def test_homepage
-	  get '/desphon/'
+	def test_homepage
+		get '/desphon/'
 		assert_response :success
-    assert_template 'index'
+		assert_template 'index'
 	end
 
-  def test_rss
-	  get rss_url
+	def test_rss
+		get rss_url
 		assert_response :success
-    assert_template 'rss'
+		assert_template 'rss'
 		REXML::Document.new(response.body)
+		assert_equal response.headers['type'].split(';')[0], 'application/xml'
 	end
 
-  def test_rss_not_modified
-	  get rss_url, nil, "If-Modified-Since"=>Time.now.httpdate
+	def test_rss_not_modified
+		get rss_url, nil, "If-Modified-Since"=>Time.now.httpdate
 		assert_response :not_modified
-    assert_template nil
+		assert_template nil
 		REXML::Document.new(response.body)
 	end
 

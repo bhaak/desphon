@@ -19,6 +19,7 @@
 #
 leer:
   id: 3
+  titel: ""
 
 ein_text:
   id: 1
