@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 6) do
+ActiveRecord::Schema.define(:version => 7) do
 
   create_table "Autoren", :force => true do |t|
     t.column "vorname",               :text
@@ -67,31 +67,31 @@ ActiveRecord::Schema.define(:version => 6) do
   add_index "Onlinetextelinks", ["onlinetext_id", "id", "url", "uebersichtsurl", "mime_typ", "created_at", "updated_at"], :name => "onlinetextelinks_idx"
 
   create_table "comatose_pages", :force => true do |t|
-    t.column "parent_id",   :integer,                :default => 0
-    t.column "full_path",   :text,                   :default => "''"
-    t.column "title",       :string,                 :default => "NULL"
-    t.column "slug",        :string,                 :default => "NULL"
-    t.column "keywords",    :string,                 :default => "NULL"
-    t.column "body",        :text,                   :default => "NULL"
-    t.column "filter_type", :string,   :limit => 25, :default => "'Textile'"
-    t.column "author",      :string,                 :default => "NULL"
+    t.column "parent_id",   :integer
+    t.column "full_path",   :text,                   :default => ""
+    t.column "title",       :string
+    t.column "slug",        :string
+    t.column "keywords",    :string
+    t.column "body",        :text
+    t.column "filter_type", :string,   :limit => 25, :default => "Textile"
+    t.column "author",      :string
     t.column "position",    :integer,                :default => 0
-    t.column "version",     :integer,                :default => 0
+    t.column "version",     :integer
     t.column "updated_on",  :datetime
     t.column "created_on",  :datetime
   end
 
   create_table "page_versions", :force => true do |t|
-    t.column "page_id",     :integer,                :default => 0
-    t.column "version",     :integer,                :default => 0
-    t.column "parent_id",   :integer,                :default => 0
-    t.column "full_path",   :text,                   :default => "''''''"
-    t.column "title",       :string,                 :default => "'NULL'"
-    t.column "slug",        :string,                 :default => "'NULL'"
-    t.column "keywords",    :string,                 :default => "'NULL'"
-    t.column "body",        :text,                   :default => "'NULL'"
-    t.column "filter_type", :string,   :limit => 25, :default => "'''Textile'''"
-    t.column "author",      :string,                 :default => "'NULL'"
+    t.column "page_id",     :integer
+    t.column "version",     :integer
+    t.column "parent_id",   :integer
+    t.column "full_path",   :text,                   :default => ""
+    t.column "title",       :string
+    t.column "slug",        :string
+    t.column "keywords",    :string
+    t.column "body",        :text
+    t.column "filter_type", :string,   :limit => 25, :default => "Textile"
+    t.column "author",      :string
     t.column "position",    :integer,                :default => 0
     t.column "updated_on",  :datetime
     t.column "created_on",  :datetime
