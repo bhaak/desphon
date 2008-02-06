@@ -90,6 +90,9 @@ div.aussen, div.innen {
 }
 */
 
+html, body { color: black; background-color: #ccc; }
+
+
 h1 {
   font-size: 130%;
 }
@@ -110,6 +113,10 @@ h3 {
 }
 
 
+#navigation, #fusszeile {
+  font-family: Tahoma, sans-serif;
+}
+
 #navigation {
   color: white;
   background-color: #ccc;
@@ -120,6 +127,7 @@ h3 {
 }
 
 #fusszeile {
+  color: black; 
   background-color: #bbb; /* gleiche Hintergrundsfarbe wie container */
 }
 
