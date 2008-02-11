@@ -248,6 +248,9 @@ html, body {
 	list-style: square;
 }
 
-div.imagelink a img { border: none; text-decoration: none; }
+div.imagelink a img, .header a img { border: none; text-decoration: none; }
 
-.header { background-color: black; }
+.header {
+	background-color: black;
+	margin: 2px;
+}
