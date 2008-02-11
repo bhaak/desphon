@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 7) do
+ActiveRecord::Schema.define(:version => 8) do
 
   create_table "Autoren", :force => true do |t|
     t.column "vorname",               :text
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(:version => 7) do
     t.column "autor_id",          :integer
     t.column "created_at",        :timestamp
     t.column "updated_at",        :timestamp
+    t.column "uebersetzer",       :text
+    t.column "kommentar",         :text
   end
 
   create_table "Onlinetextelinks", :force => true do |t|

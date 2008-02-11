@@ -26,6 +26,12 @@
 
 <%= select :onlinetext, :empfohlener_link, {"Empfohlener Text" => true, "Kein empfohlener Text" => false} -%>
 
+<p><label for="onlinetext_uebersetzer">Übersetzer</label><br/>
+<%= text_field 'onlinetext', 'uebersetzer'  %></p>
+
+<p><label for="onlinetext_kommentar">Kommentar</label><br/>
+<%= text_area 'onlinetext', 'kommentar'  %></p>
+
 <p><label for="onlinetext_beschreibung">Beschreibung</label><br/>
 <%= text_area 'onlinetext', 'beschreibung'  %></p>
 
