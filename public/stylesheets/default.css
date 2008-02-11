@@ -119,7 +119,7 @@ h3 {
 
 #navigation {
 	color: white;
-	background-color: #ccc;
+	background-color: #bbb;
 	border-top: 1px solid black;
 	border-right: 1px solid black;
 	border-bottom: 1px solid black;
@@ -250,3 +250,4 @@ html, body {
 
 div.imagelink a img { border: none; text-decoration: none; }
 
+.header { background-color: black; }
