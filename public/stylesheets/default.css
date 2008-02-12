@@ -253,4 +253,5 @@ div.imagelink a img, .header a img { border: none; text-decoration: none; }
 .header {
 	background-color: black;
 	margin: 2px;
+	overflow: hidden;
 }
