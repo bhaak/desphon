@@ -1,8 +1,4 @@
-#navigation {
-	left: -10em;
+/* whitespace bug in lists */
+.statistik * {
+	height: 1em;
 }
-
-.statistik * li ul {
-	line-height: 0;
-}
-
