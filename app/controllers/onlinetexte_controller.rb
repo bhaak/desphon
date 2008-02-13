@@ -10,7 +10,7 @@ class OnlinetexteController < ApplicationController
   verify :method => :post, :only => [ :destroy, :create, :update, :update_authors ],
          :redirect_to => { :action => :list }
 
-  before_filter :redirect_to_homepage, :except => [:list, :show]
+  before_filter :redirect_to_homepage, :except => [:list, :show, :index, :veroeffentlicht]
 
   def list
     if params[:format].blank?

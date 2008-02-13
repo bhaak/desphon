@@ -11,8 +11,7 @@ class ApplicationController < ActionController::Base
   # session :disabled => true
 
   def autorisiert?
-    @autorisiert = request.remote_ip == '192.168.0.245'
-    @autorisiert ||= true if not in_production?
+    @autorisiert = request.remote_ip == '127.0.0.2'
     true
   end
 

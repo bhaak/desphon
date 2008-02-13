@@ -11,7 +11,7 @@ class AutorenController < ApplicationController
   verify :method => :post, :only => [ :destroy, :create, :update ],
          :redirect_to => { :action => :list }
 
-  before_filter :redirect_to_homepage, :except => [:list, :show]
+  before_filter :redirect_to_homepage, :except => [:list, :show, :index]
 
   def list
     # @autor_pages, @autoren = paginate :autoren, :per_page => 20, :order => 'nachname, vorname'
