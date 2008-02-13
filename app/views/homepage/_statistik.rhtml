@@ -5,11 +5,11 @@
 <li><%= Autor.count -%> <%= link_to "Autoren", :controller => 'autoren', :action => 'list' -%></li>
 
 <%
-mime_typs = Onlinetextelink.find(:all, :select => "mime_typ, count(mime_typ) as anz", :group => "mime_typ")
-txt =   mime_typs.inject(0) {|sum, m|  m.mime_typ =~ /^text\// ? sum + m.anz.to_i : sum }
-audio = mime_typs.inject(0) {|sum, m|  m.mime_typ =~ /^audio\// ? sum + m.anz.to_i : sum }
+mime_typs = Onlinetextelink.find_by_sql("SELECT mime_typ, count(mime_typ) as anz from (SELECT DISTINCT onlinetext_id, mime_typ FROM onlinetextelinks) GROUP BY mime_typ")
+txt = mime_typs.inject(0) {|sum, m|  m.mime_typ =~ /^text\// ? sum + m.anz.to_i : sum }
 img = mime_typs.inject(0) {|sum, m|  m.mime_typ =~ /^image\// ? sum + m.anz.to_i : sum }
 pdf = mime_typs.inject(0) {|sum, m|  m.mime_typ == "application/pdf" ? sum + m.anz.to_i : sum }
+audio = mime_typs.inject(0) {|sum, m|  m.mime_typ =~ /^audio\// ? sum + m.anz.to_i : sum }
 
 def link_to_mime(text, mime=text)
   link_to(text, :controller => 'onlinetexte', :action => 'list', :format => mime)
