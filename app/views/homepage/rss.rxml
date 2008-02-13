@@ -10,7 +10,7 @@ xml.rss(:version=>"2.0") do
       xml.item do
         von = text.onlinetext.autoren.collect { |autor| autor.kurzname }.join(', ') 
         link = domain + url_for(:controller => "onlinetexte", :action => "show", :id => text.onlinetext.id.to_s, :anchor => "rss")
-        xml.title(text.onlinetext.titel+' von '+von)
+        xml.title(text.onlinetext.titel+' von '+von+' ('+text.mime_typ+')')
         xml.pubDate(text.created_at.rfc2822)
         xml.link(link) 
         xml.guid("onlinetextelinks_"+text.id.to_s, :isPermaLink => false)
