@@ -1,4 +1,10 @@
 <h1>Texte sortiert nach Veröffentlichungsdatum</h1>
+<% if @autorisiert -%>
+<hr />
+<%= link_to 'Neuer Text', :action => 'new' -%>
+<hr />
+<% end -%>
+
 <% initiale = '' -%>
 <% gerade = 0 -%>
 <% for onlinetext in @onlinetexte -%>
@@ -25,7 +31,4 @@
 <% end -%>
 
 <br />
-<hr />
-<br />
 
-<%= link_to 'Neuer Text', :action => 'new' if @autorisiert %>
