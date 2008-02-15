@@ -15,7 +15,7 @@
 <%='<b>ISBN/ISSN:</b> '+h(@onlinetext.isbn_issn)+'<br/>' if not @onlinetext.isbn_issn.blank? -%>
 <%='<b>Verlag:</b> '+h(@onlinetext.verlag)+'<br/>' if not @onlinetext.verlag.blank? -%>
 <%='<b>Übersetzer:</b> '+h(@onlinetext.uebersetzer)+'<br/>' if not @onlinetext.uebersetzer.blank? -%>
-<%='<b>Originalsprache:</b> '+h(@onlinetext.originalsprache)+'<br/>' if not @onlinetext.originalsprache.blank? -%>
+<%='<b>Originalsprache:</b> '+h(@onlinetext.originalsprache)+'<br/>' if not @onlinetext.originalsprache.blank? and @onlinetext.originalsprache != 'deutsch' -%>
 <%='<span class="beschreibung"><b>Beschreibung:</b> '+h(@onlinetext.beschreibung)+'</span><br/>' if not @onlinetext.beschreibung.blank? -%>
 <%='<span class="kommentar"><b>Kommentar:</b> '+h(@onlinetext.kommentar)+'</span>' if not @onlinetext.kommentar.blank? -%>
 </p>
