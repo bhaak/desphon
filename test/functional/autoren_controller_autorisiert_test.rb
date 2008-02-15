@@ -32,7 +32,7 @@ class AutorenControllerAutorisiertTest < Test::Unit::TestCase
     post :create, :autor => {}
 
     assert_response :redirect
-    assert_redirected_to :action => 'list'
+    assert_redirected_to :action => 'show'
 
     assert_equal num_autoren + 1, Autor.count
   end

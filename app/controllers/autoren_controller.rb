@@ -39,7 +39,7 @@ class AutorenController < ApplicationController
     @autor = Autor.new(params[:autor])
     if @autor.save
       flash[:notice] = 'Autor was successfully created.'
-      redirect_to :action => 'list'
+      redirect_to :action => 'show', :id => @autor
     else
       render :action => 'new'
     end
