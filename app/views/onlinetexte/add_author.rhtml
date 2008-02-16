@@ -4,12 +4,12 @@
 
 <% @autoren = Autor.find(:all) -%>
 <% for autor in @autoren -%>
-<%=h autor.zeigeNamen -%><br/>
+<!--<%=h autor.zeigeNamen -%><br/>-->
 <% end -%>
 
 <% form_tag :action => 'update_authors', :id => @onlinetext do %>
 	 <%= multi_select_collection("selektierte_autoren", @autoren,
-   		 @onlinetext.autoren, "id", "zeigeNamen", size=5) %>
+   		 @onlinetext.autoren, "id", "zeigeNamen", size=20) %>
   <br/>
   <%= submit_tag 'Edit' %>
 <% end %>
