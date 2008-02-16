@@ -2,10 +2,18 @@ domain = request.protocol + request.host_with_port
 xml.instruct! :xml, :version=>"1.0"
 xml.rss(:version=>"2.0") do
   xml.channel do
-    xml.title("desphon")
-		xml.link(domain + url_for(:rss => nil))
+    xml.title("desphon: deutschsprachige Phantastik online")
+    xml.link(domain + url_for(:rss => nil))
     xml.description("Neue Texte bei desphon")
     xml.language("de")
+    xml.webMaster("bhaak@gmx.net")
+    xml.managingEditor("bhaak@gmx.net")
+    xml.pubDate(Time.now.rfc2822)
+    xml.image do
+      xml.title("desphon: deutschsprachige Phantastik online")
+      xml.url(domain + "/desphon/images/desphon.png")
+      xml.link(domain + url_for(:controller => "homepage"))
+    end
     for text in @texte
       xml.item do
         von = text.onlinetext.autoren.collect { |autor| autor.kurzname }.join(', ') 
