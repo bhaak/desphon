@@ -15,9 +15,9 @@ set :deploy_to, "/home/httpd/#{application}"
 # and sftp it to the remote servers
 set :deploy_via, :copy
 
-role :app, "httpd@ganymed"
-role :web, "httpd@ganymed"
-role :db,  "httpd@ganymed", :primary => true
+role :app, "httpd@ganymed:8080"
+role :web, "httpd@ganymed:8080"
+role :db,  "httpd@ganymed:8080", :primary => true
 
 namespace :deploy do
   task :start, :roles => :app do
