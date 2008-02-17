@@ -1,6 +1,9 @@
 <h1>New onlinetext</h1>
 
+
 <% form_tag :action => 'create' do %>
+  <%= hidden_field_tag :autorid, @autorid  %>
+
   <%= render :partial => 'form' %>
   <%= submit_tag "Create" %>
 <% end %>

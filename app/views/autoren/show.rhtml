@@ -13,6 +13,7 @@
 <%= mail_to "bhaak@gmx.net", "E-Mail-Kommentar", :subject => "[desphon] "+@autor.zeigeNamen %>
 
 <% if @autorisiert then -%>
+<br /><%= link_to 'Neuer Text', :controller => 'onlinetexte', :action => 'new', :autor => @autor %>
 | <%= link_to 'Ändern', :action => 'edit', :id => @autor %> |
 <%= link_to 'Löschen', :action => 'destroy', :id => @autor %>
 <% end -%>

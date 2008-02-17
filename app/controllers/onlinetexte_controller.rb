@@ -43,11 +43,14 @@ class OnlinetexteController < ApplicationController
 
   def new
     @onlinetext = Onlinetext.new
+    @autorid = params[:autor]
   end
 
   def create
     cache_loeschen
     @onlinetext = Onlinetext.new(params[:onlinetext])
+    @onlinetext.autoren << Autor.find(params[:autorid]) if not params[:autorid].blank?
+
     if @onlinetext.save
       flash[:notice] = 'Onlinetext was successfully created.'
       redirect_to :action => 'show', :id => @onlinetext.id
