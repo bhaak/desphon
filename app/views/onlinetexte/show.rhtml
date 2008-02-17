@@ -43,7 +43,7 @@
   <tr>
     <td><%=h url.mime_typ %></td>
     <td><a href="<%= url.url -%>"><%=h url.zeige_url -%></a></td>
-    <td><%=h url.uebersichtsurl %></td>
+    <td><a href="<%= url.uebersichtsurl -%>"><%=h url.uebersichtsurl -%></a></td>
 
 <% if @autorisiert then -%>
 		<td><%= link_to 'Ändern', :controller => 'onlinetextelinks', :action => 'edit', :id => url %></td>
