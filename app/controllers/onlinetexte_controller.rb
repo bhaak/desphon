@@ -69,6 +69,8 @@ class OnlinetexteController < ApplicationController
     @onlinetext = Onlinetext.find(params[:id])
     if @onlinetext.update_attributes(params[:onlinetext])
       flash[:notice] = 'Onlinetext was successfully updated.'
+
+      for autor in @onlinetext.autoren do autor.save; end # Autor-Aenderungszeit aktualisieren
       redirect_to :action => 'show', :id => @onlinetext
     else
       render :action => 'edit'
