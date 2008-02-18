@@ -48,11 +48,19 @@ class OnlinetexteControllerAutorisiertTest < Test::Unit::TestCase
   end
 
   def test_update
+    assert_nothing_raised {
+      Onlinetext.find(@first_id)
+    }
+
     post :update, :id => @first_id
     assert_response :redirect
     
     assert_redirected_to :action => 'show'
     assert_equal @response.redirected_to[:id].id, @first_id
+
+    # ueberpruefen, ob Update eines Onlinetexte auch Autor updatet
+    onlinetext = Onlinetext.find(@first_id)
+    assert_equal onlinetext.updated_at, onlinetext.autoren[0].updated_at
   end
 
   def test_destroy
