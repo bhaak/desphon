@@ -6,7 +6,7 @@ class Autor < ActiveRecord::Base
     return "#{id}-#{kurzname.suchmaschinenfreundlich}"
   end
 
-  MONATSNAMEN = [nil, "Januar", "Februar", "März", "April", "Mai", "Juni",
+  MONATSNAMEN = [nil, "Januar", "Februar", "M&auml;rz", "April", "Mai", "Juni",
     "Juli", "August", "September", "Oktober", "November", "Dezember"]
 
   def kurzname
