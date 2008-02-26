@@ -80,3 +80,10 @@ class String
 	end
 end
 
+
+class Time
+	MONAT = [ '', 'Januar', 'Februar', 'M&auml;rz', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember' ]
+	def html_datum
+		return day.to_s+". "+MONAT[month]+" "+year.to_s+", "+strftime("%H:%M")
+	end
+end

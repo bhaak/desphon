@@ -32,4 +32,11 @@ class ApplicationTest < Test::Unit::TestCase
                  "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg".suchmaschinenfreundlich)
   end
 
+  def test_html_datum
+    datum = Time.parse("2008-02-24 12:11:04")
+    assert_equal("24. Februar 2008, 12:11", datum.html_datum)
+    datum = Time.parse("2008-03-01")
+    assert_equal("1. M&auml;rz 2008, 00:00", datum.html_datum)
+  end
+
 end
