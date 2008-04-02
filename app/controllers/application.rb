@@ -28,5 +28,6 @@ class ApplicationController < ActionController::Base
 
   def cache_loeschen
     expire_fragment(:controller => "alle", :action => "statistik")
+    expire_fragment(:controller => "alle", :action => "fusszeile")
   end
 end
