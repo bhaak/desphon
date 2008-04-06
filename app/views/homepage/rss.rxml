@@ -11,13 +11,13 @@ xml.rss(:version=>"2.0") do
     xml.pubDate(Time.now.rfc2822)
     xml.image do
       xml.title("desphon: deutschsprachige Phantastik online")
-      xml.url(domain + "/desphon/images/desphon.png")
+      xml.url(domain + "/desphon/images/desphon_rss.png")
       xml.link(domain + url_for(:controller => "homepage"))
     end
     for text in @texte
       xml.item do
         von = text.onlinetext.autoren.collect { |autor| autor.kurzname }.join(', ') 
-        link = domain + url_for(:controller => "onlinetexte", :action => "show", :id => text.onlinetext.id.to_s, :anchor => "rss")
+        link = domain + url_for(:controller => "onlinetexte", :action => "show", :id => text.onlinetext.to_param, :anchor => "rss")
         xml.title(text.onlinetext.titel+' von '+von+' ('+text.mime_typ+')')
         xml.pubDate(text.created_at.rfc2822)
         xml.link(link) 
