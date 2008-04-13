@@ -44,11 +44,15 @@ h3 {
 .e-mail { display: none; }
 
 
-.statistik, .empfohlener_link, .links {
+.statistik, .empfohlener_link, .links, .suche {
 	font-size: 70%;
 	border: 1px solid black;
 	margin: 2px;
 	padding: 2px;
+}
+
+.suche input { 
+  margin: 0.2em;
 }
 
 .statistik * li {

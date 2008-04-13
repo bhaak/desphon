@@ -1,4 +1,15 @@
-<% cache(:controller => "alle", :action => "links") do -%>
+<% cache(:controller => "alle", :action => "suche") do -%>
 <div class="suche">
+
+<!-- Use of this code assumes agreement with the Google Custom Search Terms of Service. -->
+<!-- The terms of service are available at /coop/docs/cse/tos.html -->
+
+<form name="cse" id="searchbox_demo" action="http://www.google.ch/cse">
+  <input type="hidden" name="cref" value="" />
+  <input name="q" type="text" /> <br />
+  <input type="submit" name="sa" value="Suche" />
+</form>
+<script type="text/javascript" src="http://www.google.ch/cse/tools/onthefly?form=searchbox_demo"></script>
+
 </div>
 <% end -%>
