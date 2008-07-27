@@ -51,10 +51,6 @@ h3 {
 	padding: 2px;
 }
 
-.suche input { 
-  margin: 0.2em;
-}
-
 .statistik * li {
 	display: block;
 	text-indent: 0em;
@@ -160,6 +156,8 @@ div.imagelink a img, .header a img { border: none; text-decoration: none; }
 	overflow: hidden;
 }
 
+
+/* per Javascript sortierbare Tabellen */
 .sortable td {
 	padding-left: 0.2em;
 	padding-right: 0.2em;
@@ -179,3 +177,12 @@ div.imagelink a img, .header a img { border: none; text-decoration: none; }
 .even {
 	background-color: #bbb;
 }
+
+/* Google-Suchfeld */
+.suche input { 
+  margin: 0.2em;
+}
+.suche input.suchfeld { 
+  width: 95%;
+}
+
