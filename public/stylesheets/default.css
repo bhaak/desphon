@@ -159,3 +159,23 @@ div.imagelink a img, .header a img { border: none; text-decoration: none; }
 	margin: 2px;
 	overflow: hidden;
 }
+
+.sortable td {
+	padding-left: 0.2em;
+	padding-right: 0.2em;
+}
+.sortable th a {
+	text-decoration: none;
+}
+.sortable th img {
+	border: 0px solid black;
+}
+.sortable .jahr {
+	text-align: center;
+}
+.odd {
+	background-color: #aaa;
+}
+.even {
+	background-color: #bbb;
+}

@@ -46,14 +46,17 @@
 <% end %>
 <br /><%= link_to 'Neuer Autorenlink', :controller => 'autorenlinks', :action => 'new', :autor => @autor if @autorisiert -%>
 
-<% onlinetexte = @autor.onlinetexte -%>
+<% onlinetexte = @autor.onlinetexte.find(:all, :order => "titel, jahr") -%>
 <% if onlinetexte.size > 0 -%>
   <hr />
   <h3>Texte</h3>
+  <table class="sortable" id="texte">
+  <tr><th>Titel</th><th>Jahr</th></tr>
   <% for onlinetext in onlinetexte -%>
-    <%= link_to h(onlinetext.titel), :controller => 'onlinetexte', :action => 'show', :id => onlinetext -%>
-    <%= '('+h(onlinetext.jahr)+')' if not onlinetext.jahr.blank? -%><br/>
+    <tr><td><%= link_to h(onlinetext.titel), :controller => 'onlinetexte', :action => 'show', :id => onlinetext -%></td>
+    <td class="jahr"><%= h(onlinetext.jahr) if not onlinetext.jahr.blank? -%></td></tr>
   <% end %>
+  </table>
 <% end %>
 
 <hr />
