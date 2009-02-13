@@ -153,7 +153,7 @@ module Comatose
       else
         true
       end
-      return request.remote_ip == '127.0.0.2'
+      return request.remote_ip == '127.0.0.-1'
     end
 
     def fetch_author_name
