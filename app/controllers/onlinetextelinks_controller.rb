@@ -43,7 +43,7 @@ class OnlinetextelinksController < ApplicationController
   def destroy
     cache_loeschen
     @onlinetextelink = Onlinetextelink.find(params[:id])
-    onlinetextelink.destroy
+    @onlinetextelink.destroy
     redirect_zum_onlinetext
   end
 
