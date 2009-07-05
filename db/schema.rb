@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 8) do
+ActiveRecord::Schema.define(:version => 9) do
 
   create_table "Autoren", :force => true do |t|
     t.column "vorname",               :text
@@ -35,26 +35,6 @@ ActiveRecord::Schema.define(:version => 8) do
     t.column "updated_at",   :timestamp
   end
 
-  create_table "Onlinetexte", :force => true do |t|
-    t.column "titel",             :text
-    t.column "buchtitel",         :text
-    t.column "verlag",            :text
-    t.column "isbn_issn",         :text
-    t.column "jahr",              :integer
-    t.column "sprache",           :text
-    t.column "originalsprache",   :text
-    t.column "beschreibungslink", :text
-    t.column "format",            :text
-    t.column "typ",               :text
-    t.column "empfohlener_link",  :boolean
-    t.column "beschreibung",      :text
-    t.column "autor_id",          :integer
-    t.column "created_at",        :timestamp
-    t.column "updated_at",        :timestamp
-    t.column "uebersetzer",       :text
-    t.column "kommentar",         :text
-  end
-
   create_table "Onlinetextelinks", :force => true do |t|
     t.column "onlinetext_id",               :integer
     t.column "url",                         :text
@@ -81,6 +61,27 @@ ActiveRecord::Schema.define(:version => 8) do
     t.column "version",     :integer
     t.column "updated_on",  :datetime
     t.column "created_on",  :datetime
+  end
+
+  create_table "onlinetexte", :force => true do |t|
+    t.column "titel",             :text
+    t.column "buchtitel",         :text
+    t.column "verlag",            :text
+    t.column "isbn_issn",         :text
+    t.column "jahr",              :integer
+    t.column "sprache",           :text
+    t.column "originalsprache",   :text
+    t.column "beschreibungslink", :text
+    t.column "format",            :text
+    t.column "typ",               :text
+    t.column "empfohlener_link",  :boolean
+    t.column "beschreibung",      :text
+    t.column "autor_id",          :integer
+    t.column "created_at",        :datetime
+    t.column "updated_at",        :datetime
+    t.column "uebersetzer",       :text
+    t.column "kommentar",         :text
+    t.column "serie",             :text
   end
 
   create_table "page_versions", :force => true do |t|

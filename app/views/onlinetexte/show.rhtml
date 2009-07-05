@@ -11,6 +11,7 @@
  -%><br/>
 <% end -%>
 <%='<b>Veröffentlicht:</b> '+h(@onlinetext.jahr)+'<br/>' if not @onlinetext.jahr.blank? -%>
+<%='<b>Serie:</b> '+h(@onlinetext.serie)+'<br/>' if not @onlinetext.serie.blank? -%>
 <%='<b>Buch:</b> '+h(@onlinetext.buchtitel)+'<br/>' if not @onlinetext.buchtitel.blank? -%>
 <%='<b>ISBN/ISSN:</b> '+h(@onlinetext.isbn_issn)+'<br/>' if not @onlinetext.isbn_issn.blank? -%>
 <%='<b>Verlag:</b> '+h(@onlinetext.verlag)+'<br/>' if not @onlinetext.verlag.blank? -%>

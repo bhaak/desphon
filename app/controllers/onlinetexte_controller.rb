@@ -13,15 +13,19 @@ class OnlinetexteController < ApplicationController
   before_filter :redirect_to_homepage, :except => [:list, :show, :index, :veroeffentlicht]
 
   def list
-    if params[:format].blank?
-      @seiten_titel = "Texte"
-      # @onlinetext_pages, @onlinetexte = paginate :onlinetexte, :per_page => 10, :order => 'titel', :include => :autoren
-      @onlinetexte = Onlinetext.find(:all, :order => 'titel', :include => :autoren)
-    else
+    if not params[:format].blank?
       @seiten_titel = "Texte im Format "+params[:format]
       # @onlinetext_pages, @onlinetexte = paginate :onlinetexte, :per_page => 10, :order => 'titel',
       @onlinetexte = Onlinetext.find :all, :order => 'titel',
       :include => [:onlinetextelinks, :autoren], :conditions => ["onlinetextelinks.mime_typ = ?", params[:format]]
+    elsif not params[:serie].blank?
+      @seiten_titel = "Texte der Serie »"+params[:serie]+"«"
+      @onlinetexte = Onlinetext.find :all, :order => 'titel',
+      :conditions => ["onlinetexte.serie = ?", params[:serie]]
+    else
+      @seiten_titel = "Texte"
+      # @onlinetext_pages, @onlinetexte = paginate :onlinetexte, :per_page => 10, :order => 'titel', :include => :autoren
+      @onlinetexte = Onlinetext.find(:all, :order => 'titel', :include => :autoren)
     end
   end
 
