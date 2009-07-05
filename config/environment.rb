@@ -88,3 +88,15 @@ class Time
 		return day.to_s+". "+MONAT[month]+" "+year.to_s+", "+strftime("%H:%M")
 	end
 end
+
+# undefined method `[]' for #<Enumerable::Enumerator:0xb6f614c0>
+# http://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg528878.html
+unless '1.9'.respond_to?(:force_encoding)
+  String.class_eval do
+    begin
+      remove_method :chars
+    rescue NameError
+      # OK
+    end
+  end
+end
