@@ -35,18 +35,34 @@ ActiveRecord::Schema.define(:version => 9) do
     t.column "updated_at",   :timestamp
   end
 
+  create_table "Onlinetexte", :force => true do |t|
+    t.column "titel",             :text
+    t.column "buchtitel",         :text
+    t.column "verlag",            :text
+    t.column "isbn_issn",         :text
+    t.column "jahr",              :integer
+    t.column "sprache",           :text
+    t.column "originalsprache",   :text
+    t.column "beschreibungslink", :text
+    t.column "empfohlener_link",  :boolean
+    t.column "beschreibung",      :text
+    t.column "created_at",        :timestamp
+    t.column "updated_at",        :timestamp
+    t.column "uebersetzer",       :text
+    t.column "kommentar",         :text
+    t.column "serie",             :text
+  end
+
   create_table "Onlinetextelinks", :force => true do |t|
     t.column "onlinetext_id",               :integer
     t.column "url",                         :text
+    t.column "url_beschreibung",            :text
     t.column "uebersichtsurl",              :text
+    t.column "uebersichtsurl_beschreibung", :text
     t.column "mime_typ",                    :text
     t.column "created_at",                  :timestamp
     t.column "updated_at",                  :timestamp
-    t.column "url_beschreibung",            :text
-    t.column "uebersichtsurl_beschreibung", :text
   end
-
-  add_index "Onlinetextelinks", ["onlinetext_id", "id", "url", "uebersichtsurl", "mime_typ", "created_at", "updated_at"], :name => "onlinetextelinks_idx"
 
   create_table "comatose_pages", :force => true do |t|
     t.column "parent_id",   :integer
@@ -61,27 +77,6 @@ ActiveRecord::Schema.define(:version => 9) do
     t.column "version",     :integer
     t.column "updated_on",  :datetime
     t.column "created_on",  :datetime
-  end
-
-  create_table "onlinetexte", :force => true do |t|
-    t.column "titel",             :text
-    t.column "buchtitel",         :text
-    t.column "verlag",            :text
-    t.column "isbn_issn",         :text
-    t.column "jahr",              :integer
-    t.column "sprache",           :text
-    t.column "originalsprache",   :text
-    t.column "beschreibungslink", :text
-    t.column "format",            :text
-    t.column "typ",               :text
-    t.column "empfohlener_link",  :boolean
-    t.column "beschreibung",      :text
-    t.column "autor_id",          :integer
-    t.column "created_at",        :datetime
-    t.column "updated_at",        :datetime
-    t.column "uebersetzer",       :text
-    t.column "kommentar",         :text
-    t.column "serie",             :text
   end
 
   create_table "page_versions", :force => true do |t|
