@@ -28,7 +28,7 @@ namespace :deploy do
     run "touch #{shared_path}/log/development.log #{shared_path}/log/fastcgi.crash.log #{shared_path}/log/production.log"
     run "chmod g+w #{shared_path}/log/*"
     #run "chgrp -R lighttpd #{deploy_to}"
-    run "find #{deploy_to} -group users | xargs chgrp lighttpd"
+    run "find #{deploy_to}/current -group users | xargs chgrp lighttpd"
   end
 
   task :stop, :roles => :app do
