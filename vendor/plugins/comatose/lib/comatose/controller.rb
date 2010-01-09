@@ -59,7 +59,18 @@ module Comatose
 
     # For use in the #show method... determines the current page path
     def get_page_path
-      page_name = params[:page].to_s
+
+      #in rails 2.0, params[:page] comes back as just an Array, so to_s doesn't do join('/')
+      if params[:page].is_a? Array
+        page_name = params[:page].join("/")
+      #in rails 1.x, params[:page] comes back as ActionController::Routing::PathSegment::Result
+      elsif params[:page].is_a? ActionController::Routing::PathSegment::Result
+        page_name = params[:page].to_s
+      else
+        logger.debug "get_page_path - params[:page] is an unrecognized type, may cause problems: #{params[:page].class}"
+        page_name = params[:page].to_s
+      end
+
       page_ext = page_name.split('.')[1] unless page_name.empty?
       # TODO: Automatic support for page RSS feeds... ????
       if page_name.nil? or page_name.empty?

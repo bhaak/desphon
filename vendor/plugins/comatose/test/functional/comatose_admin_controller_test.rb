@@ -96,5 +96,16 @@ class ComatoseAdminControllerTest < Test::Unit::TestCase
       q1.reload
     end
   end
+  
+  should "set runtime mode" do
+    assert_equal :plugin, ComatoseAdminController.runtime_mode
+    comatose_admin_view_path = File.expand_path(File.join( File.dirname(__FILE__), '..', '..', 'views'))
+
+    if ComatoseAdminController.respond_to?(:template_root)
+      assert_equal comatose_admin_view_path, ComatoseAdminController.template_root
+    else
+      assert ComatoseAdminController.view_paths.include?(comatose_admin_view_path)
+    end
+  end
 
 end

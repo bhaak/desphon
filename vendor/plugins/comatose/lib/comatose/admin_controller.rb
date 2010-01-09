@@ -153,7 +153,6 @@ module Comatose
       else
         true
       end
-      return request.remote_ip == '127.0.0.-1'
     end
 
     def fetch_author_name
@@ -301,12 +300,17 @@ module Comatose
       end
     
       def runtime_mode=(mode)
-        case mode
-        when :plugin
-          self.original_template_root = self.template_root
-          self.template_root = File.join( File.dirname(__FILE__), '..', '..', 'views')
-        when :application
-          self.template_root = self.original_template_root if self.original_template_root
+        admin_view_path = File.expand_path(File.join( File.dirname(__FILE__), '..', '..', 'views'))
+        if self.respond_to?(:template_root)
+          case mode
+          when :plugin
+            self.original_template_root = self.template_root
+            self.template_root = admin_view_path
+          when :application
+            self.template_root = self.original_template_root if self.original_template_root
+          end
+        else
+          ActionController::Base.append_view_path(admin_view_path) unless ActionController::Base.view_paths.include?(admin_view_path)
         end
         @@runtime_mode = mode
       end

@@ -8,7 +8,7 @@
 	#onlinetext = Onlinetext.find(:first)
   srand(jetzt) 
 	onlinetext = onlinetexte[rand(onlinetexte.size)]
-  autoren = onlinetext.autoren if not onlinetext.blank?
+	autoren = onlinetext.autoren if not onlinetext.blank?
 -%><br/>
 <% if not onlinetext.blank? -%>
 <%= link_to onlinetext.titel, { :action => "show", :id => onlinetext, :controller => "onlinetexte" } -%><br/>

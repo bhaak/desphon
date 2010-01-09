@@ -1,4 +1,4 @@
-<% alphabet = @autoren.collect {|autor| autor.nachname_vorname.chars[0..0] } -%>
+<% alphabet = @autoren.collect {|autor| autor.nachname_vorname[0..0] } -%>
 <%= toc alphabet %>
 
 <hr />
@@ -13,7 +13,7 @@
 
 <% initiale = '' -%>
 <% for autor in @autoren %>
- <% neu_initiale = autor.nachname_vorname.chars[0..0] %>
+ <% neu_initiale = autor.nachname_vorname.mb_chars[0..0] %>
   <% if neu_initiale != initiale then -%>
     <% initiale = neu_initiale -%>
     <h3 id="<%= h initiale -%>"><%= h initiale -%></h3>

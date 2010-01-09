@@ -5,7 +5,7 @@
 # ENV['RAILS_ENV'] ||= 'production'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '1.2.6' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -21,6 +21,8 @@ Rails::Initializer.run do |config|
 
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
+
+  config.action_controller.session = { :key => "_desphon2_session", :secret => "5bde4d802ea07a26965f9ee0d02a572a" } 
 
   # Force all environments to use the same logger level 
   # (by default production uses :info, the others :debug)
@@ -43,24 +45,6 @@ Rails::Initializer.run do |config|
   # config.active_record.default_timezone = :utc
   
   # See Rails::Configuration for more options
-end
-
-# Add new inflection rules using the following format 
-# (all these examples are active by default):
-# Inflector.inflections do |inflect|
-#   inflect.plural /^(ox)$/i, '\1en'
-#   inflect.singular /^(ox)en/i, '\1'
-#   inflect.irregular 'person', 'people'
-#   inflect.uncountable %w( fish sheep )
-# end
-
-# Add pluralization for german words
-Inflector.inflections do |i|
-	i.irregular 'autor', 'autoren'
-	i.irregular 'onlinetext', 'onlinetexte'
-	i.irregular 'typ', 'typen'
-	i.irregular 'produkt', 'produkte'
-	i.irregular 'fehler', 'fehler'
 end
 
 # Add new mime types for use in respond_to blocks:
@@ -87,16 +71,4 @@ class Time
 	def html_datum
 		return day.to_s+". "+MONAT[month]+" "+year.to_s+", "+strftime("%H:%M")
 	end
-end
-
-# undefined method `[]' for #<Enumerable::Enumerator:0xb6f614c0>
-# http://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg528878.html
-unless '1.9'.respond_to?(:force_encoding)
-  String.class_eval do
-    begin
-      remove_method :chars
-    rescue NameError
-      # OK
-    end
-  end
 end
