@@ -15,7 +15,16 @@ class AutorenController < ApplicationController
 
   def list
     # @autor_pages, @autoren = paginate :autoren, :per_page => 20, :order => 'nachname, vorname'
-    @autoren = Autor.find(:all, :order => 'nachname, vorname')
+    last_modified = Autor.find_by_sql("SELECT max(updated_at) as updated_at from Autoren")[0].updated_at
+
+    response.headers['Last-Modified'] = last_modified.httpdate if in_production?
+
+    minTime = Time.rfc2822(request.env["HTTP_IF_MODIFIED_SINCE"]) rescue nil
+    if minTime and last_modified <= minTime 
+      render :nothing => true, :status => 304
+    else
+      @autoren = Autor.find(:all, :order => 'nachname, vorname')
+    end
   end
 
   def show
