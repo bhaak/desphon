@@ -42,34 +42,18 @@ ActiveRecord::Schema.define(:version => 9) do
     t.timestamp "updated_at"
   end
 
-  create_table "Onlinetexte", :force => true do |t|
-    t.text      "titel"
-    t.text      "buchtitel"
-    t.text      "verlag"
-    t.text      "isbn_issn"
-    t.integer   "jahr"
-    t.text      "sprache"
-    t.text      "originalsprache"
-    t.text      "beschreibungslink"
-    t.boolean   "empfohlener_link"
-    t.text      "beschreibung"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.text      "uebersetzer"
-    t.text      "kommentar"
-    t.text      "serie"
-  end
-
   create_table "Onlinetextelinks", :force => true do |t|
     t.integer   "onlinetext_id"
     t.text      "url"
-    t.text      "url_beschreibung"
     t.text      "uebersichtsurl"
-    t.text      "uebersichtsurl_beschreibung"
     t.text      "mime_typ"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.text      "url_beschreibung"
+    t.text      "uebersichtsurl_beschreibung"
   end
+
+  add_index "Onlinetextelinks", ["onlinetext_id", "id", "url", "uebersichtsurl", "mime_typ", "created_at", "updated_at"], :name => "onlinetextelinks_idx"
 
   create_table "comatose_pages", :force => true do |t|
     t.integer  "parent_id"
@@ -84,6 +68,27 @@ ActiveRecord::Schema.define(:version => 9) do
     t.integer  "version"
     t.datetime "updated_on"
     t.datetime "created_on"
+  end
+
+  create_table "onlinetexte", :force => true do |t|
+    t.text     "titel"
+    t.text     "buchtitel"
+    t.text     "verlag"
+    t.text     "isbn_issn"
+    t.integer  "jahr"
+    t.text     "sprache"
+    t.text     "originalsprache"
+    t.text     "beschreibungslink"
+    t.text     "format"
+    t.text     "typ"
+    t.boolean  "empfohlener_link"
+    t.text     "beschreibung"
+    t.integer  "autor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "uebersetzer"
+    t.text     "kommentar"
+    t.text     "serie"
   end
 
   create_table "page_versions", :force => true do |t|
