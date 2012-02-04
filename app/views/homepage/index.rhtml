@@ -2,4 +2,4 @@
 
 <%= '<div class="neuigkeiten_link">'+
     link_to("weitere Nachrichten &hellip;", :action=>'neuigkeiten')+
-		'</div>' if @news.children.length > 3 -%>
+		'</div>' if @news and @news.children.length > 3 -%>

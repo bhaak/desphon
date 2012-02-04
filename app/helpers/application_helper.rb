@@ -35,11 +35,11 @@ module ApplicationHelper
   end
 
   def letzte_aktualisierung
-    Time.parse(ActiveRecord::Base.connection.select_value("select max(created) neueste from (
+    Time.parse ActiveRecord::Base.connection.select_value("select max(created) neueste from (
       select max(created_on) created from comatose_pages union
       select max(created_at) created from onlinetextelinks union
       select max(created_at) created from autoren union
       select max(created_at) created from onlinetexte
-    )"))
+    )") || "0"
   end
 end
