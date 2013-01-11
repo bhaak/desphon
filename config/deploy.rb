@@ -1,3 +1,5 @@
+require "bundler/capistrano"
+
 set :application, "desphon"
 
 # If you aren't deploying to /u/apps/#{application} on the target
