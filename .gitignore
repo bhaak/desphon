@@ -1,3 +1,4 @@
 log
 db/dev.db
 db/test.db
+*.swp
