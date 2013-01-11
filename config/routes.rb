@@ -13,6 +13,8 @@ ActionController::Routing::Routes.draw do |map|
 	# -- just remember to delete public/index.html.
 	map.connect '/desphon', :controller => "homepage"
 
+	map.connect '/', :controller => 'redirect', :url => '/desphon'
+
 	map.connect '/desphon/neuigkeiten', :controller => "homepage", :action => 'neuigkeiten'
 	map.connect '/desphon/faq', :controller => "homepage", :action => 'faq'
 	map.connect '/desphon/ueber', :controller => "homepage", :action => 'ueber'
