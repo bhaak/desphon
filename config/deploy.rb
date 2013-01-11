@@ -1,5 +1,4 @@
 set :application, "desphon"
-set :repository,  "file:///home/bubi/.subversion_repository/dsfo"
 
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location
@@ -7,9 +6,10 @@ set :repository,  "file:///home/bubi/.subversion_repository/dsfo"
 # set :deploy_to, "/var/www/#{application}"
 set :deploy_to, "/home/httpd/#{application}"
 
-# If you aren't using Subversion to manage your source code, specify
-# your SCM below:
-# set :scm, :subversion
+# VCS settings
+set :scm, :git
+set :branch, "master"
+set :repository, "." # use local repository
 
 # checkout locally, then tar and gzip the copy
 # and sftp it to the remote servers
